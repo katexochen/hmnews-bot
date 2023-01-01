@@ -103,8 +103,8 @@ func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []ne
 		toots := splitIntoToots(news[i].message)
 
 		var lastStatusID mastodon.ID
-		for _, toot := range toots {
-			log.Printf("Posting news entry %d with message %q, part %d/%d", i, toot, i+1, len(toots))
+		for j, toot := range toots {
+			log.Printf("Posting news entry %d with message %q, part %d/%d", i, toot, j+1, len(toots))
 			toot := &mastodon.Toot{Status: toot}
 			if lastStatusID != "" {
 				toot.InReplyToID = lastStatusID
