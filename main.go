@@ -19,33 +19,33 @@ import (
 func main() {
 	ctx := context.Background()
 
-	path := os.Getenv("HMBOT_PATH")
+	path := os.Getenv("HMNB_PATH")
 	if path == "" {
-		log.Fatal("HMBOT_PATH not set")
+		log.Fatal("HMNB_PATH not set")
 	}
-	maxPostsStr := os.Getenv("HMBOT_MAX_POSTS")
+	maxPostsStr := os.Getenv("HMNB_MAX_POSTS")
 	if maxPostsStr == "" {
-		log.Fatal("HMBOT_MAX_POSTS not set")
+		log.Fatal("HMNB_MAX_POSTS not set")
 	}
 	maxPosts, err := strconv.Atoi(maxPostsStr)
 	if err != nil {
-		log.Fatalf("parsing HMBOT_MAX_POSTS: %v", err)
+		log.Fatalf("parsing HMNB_MAX_POSTS: %v", err)
 	}
-	mastodonServer := os.Getenv("HMBOT_MASTODON_SERVER")
+	mastodonServer := os.Getenv("HMNB_MASTODON_SERVER")
 	if mastodonServer == "" {
-		log.Fatal("HMBOT_MASTODON_SERVER not set")
+		log.Fatal("HMNB_MASTODON_SERVER not set")
 	}
-	mastodonClientID := os.Getenv("HMBOT_MASTODON_CLIENT_ID")
+	mastodonClientID := os.Getenv("HMNB_MASTODON_CLIENT_ID")
 	if mastodonClientID == "" {
-		log.Fatal("HMBOT_MASTODON_CLIENT_ID not set")
+		log.Fatal("HMNB_MASTODON_CLIENT_ID not set")
 	}
-	mastodonClientSecret := os.Getenv("HMBOT_MASTODON_CLIENT_SECRET")
+	mastodonClientSecret := os.Getenv("HMNB_MASTODON_CLIENT_SECRET")
 	if mastodonClientSecret == "" {
-		log.Fatal("HMBOT_MASTODON_CLIENT_SECRET not set")
+		log.Fatal("HMNB_MASTODON_CLIENT_SECRET not set")
 	}
-	mastodonAccessToken := os.Getenv("HMBOT_MASTODON_ACCESS_TOKEN")
+	mastodonAccessToken := os.Getenv("HMNB_MASTODON_ACCESS_TOKEN")
 	if mastodonAccessToken == "" {
-		log.Fatal("HMBOT_MASTODON_ACCESS_TOKEN not set")
+		log.Fatal("HMNB_MASTODON_ACCESS_TOKEN not set")
 	}
 
 	f, err := os.ReadFile(path)

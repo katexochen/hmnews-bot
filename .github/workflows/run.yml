@@ -1,0 +1,33 @@
+name: Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: "stable"
+          cache: true
+
+      - name: Get news file from home-manager
+        run: |
+          curl -fsSL -o news.nix https://raw.githubusercontent.com/nix-community/home-manager/master/modules/misc/news.nix
+
+      - name: Build
+        run: go build -o hmnb .
+
+      - name: Run
+        env:
+          HMNB_PATH: news.nix
+          HMNB_MAX_POSTS: 2
+          HMNB_MASTODON_SERVER: https://techhub.social/
+          HMNB_MASTODON_CLIENT_ID: ${{ secrets.HMNB_MASTODON_CLIENT_ID }}
+          HMNB_MASTODON_CLIENT_SECRET: ${{ secrets.HMNB_MASTODON_CLIENT_SECRET }}
+          HMNB_MASTODON_ACCESS_TOKEN: ${{ secrets.HMNB_MASTODON_ACCESS_TOKEN }}
+        run: ./hmnb
