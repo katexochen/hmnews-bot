@@ -70,6 +70,11 @@ func main() {
 		log.Fatalf("finding last toot index: %v", err)
 	}
 
+	if latestIdx == len(news)-1 {
+		log.Println("\nNo new news entries to post")
+		return
+	}
+
 	if err := postNextNewsEntries(ctx, client, news, latestIdx+1, maxPosts); err != nil {
 		log.Fatalf("posting next news entries: %v", err)
 	}
