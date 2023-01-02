@@ -125,12 +125,14 @@ func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []ne
 	return nil
 }
 
+const hashTags = "\n#NixOS #Nix #HomeManager"
+
 func splitIntoToots(message string) []string {
 	if message == "" {
 		return nil
 	}
-	if len(message) <= 1000 {
-		return []string{message}
+	if len(message)+len(hashTags) <= 1000 {
+		return []string{message + hashTags}
 	}
 
 	var toots []string
@@ -144,9 +146,10 @@ func splitIntoToots(message string) []string {
 	}
 	toots = append(toots, toot)
 
-	for i, toot := range toots {
-		toots[i] = fmt.Sprintf("%s [%d/%d]", toot, i+1, len(toots))
+	for i := range toots {
+		toots[i] = fmt.Sprintf("%s [%d/%d]", toots[i], i+1, len(toots))
 	}
+	toots[len(toots)-1] = toots[len(toots)-1] + hashTags
 
 	return toots
 }
