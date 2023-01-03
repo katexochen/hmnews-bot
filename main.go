@@ -106,6 +106,10 @@ func findLastTootIdx(ctx context.Context, client *mastodon.Client, news []newsEn
 
 func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []newsEntry, startIdx, maxPosts int) error {
 	for i := startIdx; i < startIdx+maxPosts; i++ {
+		if i >= len(news) {
+			break
+		}
+
 		toots := splitIntoToots(news[i].message)
 
 		var lastStatusID mastodon.ID
