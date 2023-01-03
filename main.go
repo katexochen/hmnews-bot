@@ -57,6 +57,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("parsing news file: %v", err)
 	}
+	log.Printf("Found %d news entries", len(news))
 
 	client := mastodon.NewClient(&mastodon.Config{
 		Server:       mastodonServer,
