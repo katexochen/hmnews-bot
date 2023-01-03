@@ -127,6 +127,7 @@ func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []ne
 			time.Sleep(5 * time.Second)
 		}
 	}
+
 	return nil
 }
 
@@ -136,6 +137,7 @@ func splitIntoToots(message string) []string {
 	if message == "" {
 		return nil
 	}
+
 	if len(message)+len(hashTags) <= 1000 {
 		return []string{message + hashTags}
 	}
