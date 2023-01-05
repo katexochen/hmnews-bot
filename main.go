@@ -131,7 +131,9 @@ func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []ne
 	return nil
 }
 
-const hashTags = "\n#NixOS #Nix #HomeManager"
+// const hashTags = "\n#NixOS #Nix #HomeManager"
+
+const hashTags = ""
 
 func splitIntoToots(message string) []string {
 	if message == "" {
