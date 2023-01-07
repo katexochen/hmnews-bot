@@ -72,7 +72,7 @@ func main() {
 	}
 
 	if latestIdx == len(news)-1 {
-		log.Println("\nNo new news entries to post")
+		log.Println("No new news entries to post")
 		return
 	}
 
@@ -131,9 +131,7 @@ func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []ne
 	return nil
 }
 
-// const hashTags = "\n#NixOS #Nix #HomeManager"
-
-const hashTags = ""
+const hashTags = "\n#NixOS #Nix #HomeManager"
 
 func splitIntoToots(message string) []string {
 	if message == "" {
