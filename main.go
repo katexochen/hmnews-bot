@@ -14,6 +14,7 @@ import (
 	"unicode"
 
 	"github.com/mattn/go-mastodon"
+	"github.com/microcosm-cc/bluemonday"
 )
 
 func main() {
@@ -76,6 +77,7 @@ func main() {
 		return
 	}
 
+	_ = maxPosts
 	if err := postNextNewsEntries(ctx, client, news, latestIdx+1, maxPosts); err != nil {
 		log.Fatalf("posting next news entries: %v", err)
 	}
@@ -94,7 +96,9 @@ func findLastTootIdx(ctx context.Context, client *mastodon.Client, news []newsEn
 
 	for _, status := range statuses {
 		for i := len(news) - 1; i >= 0; i-- {
-			if strings.Contains(html.UnescapeString(status.Content), news[i].message) {
+			newsEntry := news[i].message
+			content := html.UnescapeString(status.Content)
+			if postIsNewsEntry(content, newsEntry) {
 				log.Printf("Message of latest toot found at index %d with message %q", i, news[i].message)
 				return i, nil
 			}
@@ -102,6 +106,13 @@ func findLastTootIdx(ctx context.Context, client *mastodon.Client, news []newsEn
 	}
 
 	return 0, errors.New("could not find last toot index")
+}
+
+func postIsNewsEntry(postContent, newsEntry string) bool {
+	p := bluemonday.StripTagsPolicy()
+	postContent = p.Sanitize(postContent)
+	postContent = html.UnescapeString(postContent)
+	return strings.Contains(postContent, newsEntry)
 }
 
 func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []newsEntry, startIdx, maxPosts int) error {
