@@ -64,13 +64,10 @@ let
       };
     };
 
-    config = {
-      id = mkDefault (builtins.hashString "sha256" config.message);
-    };
+    config = { id = mkDefault (builtins.hashString "sha256" config.message); };
   });
 
 in
-
 {
   meta.maintainers = [ maintainers.rycee ];
 
@@ -81,57 +78,47 @@ in
         default = "notify";
         description = ''
           How unread and relevant news should be presented when
-          running <command>home-manager build</command> and
-          <command>home-manager switch</command>.
-
-          </para><para>
+          running {command}`home-manager build` and
+          {command}`home-manager switch`.
 
           The options are
 
-          <variablelist>
-          <varlistentry>
-            <term><literal>silent</literal></term>
-            <listitem>
-              <para>
-                Do not print anything during build or switch. The
-                <command>home-manager news</command> command still
-                works for viewing the entries.
-              </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><literal>notify</literal></term>
-            <listitem>
-              <para>
-                The number of unread and relevant news entries will be
-                printed to standard output. The <command>home-manager
-                news</command> command can later be used to view the
-                entries.
-              </para>
-            </listitem>
-          </varlistentry>
-          <varlistentry>
-            <term><literal>show</literal></term>
-            <listitem>
-              <para>
-                A pager showing unread news entries is opened.
-              </para>
-            </listitem>
-          </varlistentry>
-          </variablelist>
+          `silent`
+          : Do not print anything during build or switch. The
+            {command}`home-manager news` command still
+            works for viewing the entries.
+
+          `notify`
+          : The number of unread and relevant news entries will be
+            printed to standard output. The {command}`home-manager
+            news` command can later be used to view the entries.
+
+          `show`
+          : A pager showing unread news entries is opened.
         '';
       };
 
       entries = mkOption {
         internal = true;
         type = types.listOf entryModule;
-        default = [];
+        default = [ ];
         description = "News entries.";
+      };
+
+      json = {
+        output = mkOption {
+          internal = true;
+          type = types.package;
+          description = "The generated JSON file package.";
+        };
       };
     };
   };
 
   config = {
+    news.json.output = pkgs.writeText "hm-news.json"
+      (builtins.toJSON { inherit (cfg) display entries; });
+
     # Add news entries in chronological order (i.e., latest time
     # should be at the bottom of the list). The time should be
     # formatted as given in the output of
@@ -286,7 +273,8 @@ in
 
       {
         time = "2021-09-23T17:04:48+00:00";
-        condition = hostPlatform.isLinux && config.services.screen-locker.enable;
+        condition = hostPlatform.isLinux
+          && config.services.screen-locker.enable;
         message = ''
           'xautolock' is now optional in 'services.screen-locker', and the
           'services.screen-locker' options have been reorganized for clarity.
@@ -842,7 +830,889 @@ in
         time = "2022-11-04T14:56:46+00:00";
         condition = hostPlatform.isLinux;
         message = ''
-          A new module is available: 'programs.thunderbird';
+          A new module is available: 'programs.thunderbird'.
+        '';
+      }
+
+      {
+        time = "2022-11-13T09:05:51+00:00";
+        condition = hostPlatform.isDarwin;
+        message = ''
+          A new module is available: 'programs.thunderbird'.
+
+          Please note that the Thunderbird packages provided by Nix are
+          currently not working on macOS. The module can still be used to manage
+          configuration files by installing Thunderbird manually and setting the
+          'programs.thunderbird.package' option to a dummy package, for example
+          using 'pkgs.runCommand'.
+
+          This module requires you to set the following environment variables
+          when using an installation of Thunderbird that is not provided by Nix:
+
+            export MOZ_LEGACY_PROFILES=1
+            export MOZ_ALLOW_DOWNGRADE=1
+        '';
+      }
+
+      {
+        time = "2022-11-27T13:14:01+00:00";
+        condition = config.programs.ssh.enable;
+        message = ''
+          'programs.ssh.matchBlocks.*' now supports literal 'Match' blocks via
+          'programs.ssh.matchBlocks.*.match' option as an alternative to plain
+          'Host' blocks
+        '';
+      }
+
+      {
+        time = "2022-12-16T15:01:20+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.megasync'.
+        '';
+      }
+
+      {
+        time = "2022-12-25T08:41:32+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.cachix-agent'.
+        '';
+      }
+
+      {
+        time = "2022-12-28T21:48:22+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.clipman'.
+        '';
+      }
+
+      {
+        time = "2023-01-07T10:47:03+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          'xsession.windowManager.i3.config.[window|floating].titlebar' and
+          'wayland.windowManager.sway.config.[window|floating].titlebar' now default to 'true'.
+        '';
+      }
+
+      {
+        time = "2023-01-28T17:35:49+00:00";
+        message = ''
+          A new module is available: 'programs.papis'.
+        '';
+      }
+
+      {
+        time = "2023-01-30T10:39:11+00:00";
+        message = ''
+          A new module is available: 'programs.wlogout'.
+        '';
+      }
+
+      {
+        time = "2023-01-31T22:08:41+00:00";
+        message = ''
+          A new module is available: 'programs.rbenv'.
+        '';
+      }
+
+      {
+        time = "2023-02-02T20:49:05+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.autorandr'.
+        '';
+      }
+
+      {
+        time = "2023-02-20T22:31:23+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.mpd-mpris'.
+        '';
+      }
+
+      {
+        time = "2023-02-22T22:16:37+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.avizo'.
+        '';
+      }
+
+      {
+        time = "2023-03-16:12:00+00:00";
+        condition = config.programs.i3status-rust.enable;
+        message = ''
+          Module 'i3status-rust' was updated to support the new configuration
+          format from 0.30.x releases, that introduces many breaking changes.
+          The documentation was updated with examples from 0.30.x to help
+          the transition.
+
+          See https://github.com/greshake/i3status-rust/blob/v0.30.0/NEWS.md
+          for instructions on how to migrate.
+
+          Users that don't want to migrate yet can set
+          'programs.i3status-rust.package' to an older version.
+        '';
+      }
+
+      {
+        time = "2023-03-22T07:20:00+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.listenbrainz-mpd'.
+        '';
+      }
+
+      {
+        time = "2023-03-22T07:31:38+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.copyq'.
+        '';
+      }
+
+      {
+        time = "2023-03-25T11:03:24+00:00";
+        condition = hostPlatform.isDarwin;
+        message = ''
+          A new module is available: 'services.syncthing'.
+        '';
+      }
+
+      {
+        time = "2023-03-25T14:53:57+00:00";
+        message = ''
+          A new module is available: 'programs.hstr'.
+        '';
+      }
+
+      {
+        time = "2023-04-18T06:28:31+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.batsignal'.
+        '';
+      }
+
+      {
+        time = "2023-04-19T15:33:07+00:00";
+        message = ''
+          A new module is available: 'programs.mr'.
+        '';
+      }
+
+      {
+        time = "2023-04-28T19:59:23+00:00";
+        message = ''
+          A new module is available: 'programs.jujutsu'.
+        '';
+      }
+
+      {
+        time = "2023-05-09T16:06:56+00:00";
+        message = ''
+          A new module is available: 'programs.git-cliff'.
+        '';
+      }
+
+      {
+        time = "2023-05-12T21:31:05+00:00";
+        message = ''
+          A new module is available: 'programs.translate-shell'.
+        '';
+      }
+
+      {
+        time = "2023-05-13T13:51:18+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.fuzzel'.
+        '';
+      }
+
+      {
+        time = "2023-05-13T14:34:21+00:00";
+        condition = config.programs.ssh.enable;
+        message = ''
+          The module 'programs.ssh' can now install an SSH client. The installed
+          client is controlled by the 'programs.ssh.package` option, which
+          defaults to 'null'.
+        '';
+      }
+
+      {
+        time = "2023-05-18T21:03:30+00:00";
+        message = ''
+          A new module is available: 'programs.script-directory'.
+        '';
+      }
+
+      {
+        time = "2023-06-03T22:19:32+00:00";
+        message = ''
+          A new module is available: 'programs.ripgrep'.
+        '';
+      }
+
+      {
+        time = "2023-06-07T06:01:16+00:00";
+        message = ''
+          A new module is available: 'programs.rtx'.
+        '';
+      }
+
+      {
+        time = "2023-06-07T12:16:55+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.imv'.
+        '';
+      }
+
+      {
+        time = "2023-06-09T19:13:39+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.boxxy'.
+        '';
+      }
+
+      {
+        time = "2020-04-26T13:32:17+00:00";
+        message = ''
+          A number of new modules are available:
+
+            - 'accounts.calendar',
+            - 'accounts.contact',
+            - 'programs.khal',
+            - 'programs.vdirsyncer', and
+            - 'services.vdirsyncer' (Linux only).
+
+          The two first modules offer a number of options for
+          configuring calendar and contact accounts. This includes,
+          for example, information about carddav and caldav servers.
+
+          The khal and vdirsyncer modules make use of this new account
+          infrastructure.
+
+          Note, these module are still somewhat experimental and their
+          structure should not be seen as final, some modifications
+          may be necessary as new modules are added.
+        '';
+      }
+
+      {
+        time = "2023-06-14T21:25:34+00:00";
+        message = ''
+          A new module is available: 'programs.git-credential-oauth'.
+        '';
+      }
+
+      {
+        time = "2023-06-14T21:41:22+00:00";
+        message = ''
+          Two new modules are available:
+
+            - 'programs.comodoro' and
+            - 'services.comodoro'
+        '';
+      }
+
+      {
+        time = "2023-06-15T16:30:00+00:00";
+        condition = config.qt.enable;
+        message = ''
+          Qt module now supports new platform themes and styles, and has partial
+          support for Qt6. For example, you can now use:
+
+          - `qt.platformTheme = "kde"`: set a theme using Plasma. You can
+          configure it by setting `~/.config/kdeglobals` file;
+          - `qt.platformTheme = "qtct"`: set a theme using qt5ct/qt6ct. You
+          can control it by using the `qt5ct` and `qt6ct` applications;
+          - `qt.style.name = "kvantum"`: override the style by using themes
+          written in SVG. Supports many popular themes.
+        '';
+      }
+
+      {
+        time = "2023-06-17T22:18:22+00:00";
+        condition = config.programs.zsh.enable;
+        message = ''
+          A new module is available: 'programs.zsh.antidote'
+        '';
+      }
+
+      {
+        time = "2023-06-30T14:46:22+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.ssh-agent'
+        '';
+      }
+
+      {
+        time = "2023-07-08T08:27:41+00:00";
+        message = ''
+          A new modules is available: 'programs.darcs'
+        '';
+      }
+
+      {
+        time = "2023-07-08T09:21:06+00:00";
+        message = ''
+          A new module is available: 'programs.pyenv'.
+        '';
+      }
+
+      {
+        time = "2023-07-08T09:44:56+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.swayosd'
+        '';
+      }
+
+      {
+        time = "2023-07-20T21:56:49+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'wayland.windowManager.hyprland'
+        '';
+      }
+
+      {
+        time = "2023-07-24T10:38:23+00:00";
+        message = ''
+          A new module is available: 'programs.gh-dash'
+        '';
+      }
+
+      {
+        time = "2023-07-25T07:16:09+00:00";
+        condition = hostPlatform.isDarwin;
+        message = ''
+          A new module is available: 'services.git-sync'.
+        '';
+      }
+
+      {
+        time = "2023-08-15T15:45:45+00:00";
+        message = ''
+          A new module is available: 'programs.xplr'.
+        '';
+      }
+
+      {
+        time = "2023-08-16T15:43:30+00:00";
+        message = ''
+          A new module is available: 'programs.pqiv'.
+        '';
+      }
+
+      {
+        time = "2023-08-22T16:06:52+00:00";
+        message = ''
+          A new module is available: 'programs.qcal'.
+        '';
+      }
+
+      {
+        time = "2023-08-23T12:01:06+00:00";
+        message = ''
+          A new module is available: 'programs.yazi'.
+        '';
+      }
+
+      {
+        time = "2023-09-05T06:38:05+00:00";
+        message = ''
+          A new module is available: 'programs.carapace'.
+        '';
+      }
+
+      {
+        time = "2023-09-07T14:52:19+00:00";
+        message = ''
+          A new module is available: 'programs.eza'.
+        '';
+      }
+
+      {
+        time = "2023-09-18T11:44:11+00:00";
+        message = ''
+          A new module is available: 'programs.rio'.
+
+          Rio is a hardware-accelerated GPU terminal emulator powered by WebGPU.
+        '';
+      }
+
+      {
+        time = "2023-09-24T10:06:47+00:00";
+        message = ''
+          A new module is available: 'programs.bacon'.
+        '';
+      }
+
+      {
+        time = "2023-09-30T07:47:23+00:00";
+        message = ''
+          A new module is available: 'programs.awscli'.
+        '';
+      }
+
+      {
+        time = "2023-10-01T07:23:26+00:00";
+        message = ''
+          A new module is available: 'programs.wpaperd'.
+        '';
+      }
+
+      {
+        time = "2023-10-01T07:28:45+00:00";
+        message = ''
+          A new module is available: 'programs.khard'.
+        '';
+      }
+
+      {
+        time = "2023-10-04T06:06:08+00:00";
+        condition = config.programs.zsh.enable;
+        message = ''
+          A new module is available: 'programs.zsh.zsh-abbr'
+        '';
+      }
+
+      {
+        time = "2023-10-04T06:44:15+00:00";
+        message = ''
+          A new module is available: 'programs.thefuck'.
+        '';
+      }
+
+      {
+        time = "2023-10-04T18:35:42+00:00";
+        message = ''
+          A new module is available: 'programs.openstackclient'.
+        '';
+      }
+
+      {
+        time = "2023-10-17T06:33:24+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.darkman'.
+        '';
+      }
+
+      {
+        time = "2023-10-24T06:14:53+00:00";
+        message = ''
+          A new module is available: 'programs.cava'.
+        '';
+      }
+
+      {
+        time = "2023-11-01T21:18:20+00:00";
+        message = ''
+          A new module is available: 'programs.granted'.
+        '';
+      }
+
+      {
+        time = "2023-11-22T22:42:16+00:00";
+        message = ''
+          A new module is available: 'programs.ruff'.
+        '';
+      }
+
+      {
+        time = "2023-11-26T23:18:01+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.signaturepdf'.
+        '';
+      }
+
+      {
+        time = "2023-12-10T08:43:02+00:00";
+        condition = config.wayland.windowManager.hyprland.settings ? source;
+        message = ''
+          Entries in
+
+            wayland.windowManager.hyprland.settings.source
+
+          are now placed at the start of the configuration file. If you relied
+          on the previous placement of the 'source' entries, please set
+
+             wayland.windowManager.hyprland.sourceFirst = false
+
+          to keep the previous behaviour.
+        '';
+      }
+
+      {
+        time = "2023-12-19T22:57:52+00:00";
+        message = ''
+          A new module is available: 'programs.sapling'.
+        '';
+      }
+
+      {
+        time = "2023-12-20T11:41:10+00:00";
+        message = ''
+          A new module is available: 'programs.gradle'.
+        '';
+      }
+
+      {
+        time = "2023-12-28T08:28:26+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.osmscout-server'.
+        '';
+      }
+
+      {
+        time = "2023-12-28T13:01:15+00:00";
+        message = ''
+          A new module is available: 'programs.sftpman'.
+        '';
+      }
+
+      {
+        time = "2023-12-29T08:22:40+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.bemenu'.
+        '';
+      }
+
+      {
+        time = "2024-01-01T09:09:42+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.i3blocks'.
+        '';
+      }
+
+      {
+        time = "2024-01-03T19:25:09+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'xdg.portal'.
+        '';
+      }
+
+      {
+        time = "2024-01-20T23:45:07+00:00";
+        message = ''
+          A new module is available: 'programs.mise'.
+
+          This module replaces 'programs.rtx', which has been removed.
+        '';
+      }
+
+      {
+        time = "2024-01-27T22:53:00+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.wob'.
+        '';
+      }
+
+      {
+        time = "2024-02-05T22:33:54+00:00";
+        message = ''
+          A new module is available: 'services.arrpc'
+        '';
+      }
+
+      {
+        time = "2024-02-05T22:45:37+00:00";
+        message = ''
+          A new module is available: 'programs.jetbrains-remote'
+        '';
+      }
+
+      {
+        time = "2024-02-21T23:01:27+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'wayland.windowManager.river'.
+        '';
+      }
+
+      {
+        time = "2024-03-08T22:20:04+00:00";
+        message = ''
+          A new module is available: 'programs.zk'
+        '';
+      }
+
+      {
+        time = "2024-03-08T22:23:24+00:00";
+        message = ''
+          A new module is available: 'programs.ranger'.
+        '';
+      }
+
+      {
+        time = "2024-03-13T13:28:22+00:00";
+        message = ''
+          A new module is available: 'programs.joplin-desktop'.
+        '';
+      }
+
+      {
+        time = "2024-03-14T07:22:09+00:00";
+        condition = config.services.gpg-agent.enable;
+        message = ''
+          'services.gpg-agent.pinentryFlavor' has been removed and replaced by
+          'services.gpg-agent.pinentryPackage'.
+        '';
+      }
+
+      {
+        time = "2024-03-14T07:22:59+00:00";
+        condition = config.programs.rbw.enable;
+        message = ''
+          'programs.rbw.pinentry' has been simplified to only accept 'null' or
+          a package.
+        '';
+      }
+
+      {
+        time = "2024-03-15T08:39:52+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.activitywatch'.
+        '';
+      }
+
+      {
+        time = "2024-03-28T17:02:19+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.amberol'.
+        '';
+      }
+
+      {
+        time = "2024-04-08T21:43:38+00:00";
+        message = ''
+          A new module is available: 'programs.bun'.
+        '';
+      }
+
+      {
+        time = "2024-04-18T22:30:49+00:00";
+        message = ''
+          A new module is available: 'programs.fd'.
+        '';
+      }
+
+      {
+        time = "2024-04-19T09:23:52+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.tofi'.
+        '';
+      }
+
+      {
+        time = "2024-04-19T10:01:55+00:00";
+        message = ''
+          A new module is available: 'programs.spotify-player'.
+        '';
+      }
+
+      {
+        time = "2024-04-19T14:53:17+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.remmina'.
+        '';
+      }
+
+      {
+        time = "2024-04-21T20:53:09+00:00";
+        message = ''
+          A new module is available: 'programs.poetry'.
+
+          Poetry is a tool that helps you manage Python project dependencies and
+          packages. See https://python-poetry.org/ for more.
+        '';
+      }
+
+      {
+        time = "2024-04-22T18:04:47+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.amberol'.
+
+          Amberol is a music player with no delusions of grandeur. If you just
+          want to play music available on your local system then Amberol is the
+          music player you are looking for. See https://apps.gnome.org/Amberol/
+          for more.
+        '';
+      }
+
+      {
+        time = "2024-04-28T20:27:08+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.psd'.
+
+          Profile-sync-daemon (psd) is a tiny pseudo-daemon designed to manage
+          your browser's profile in tmpfs and to periodically sync it back to
+          your physical disc (HDD/SSD).
+        '';
+      }
+
+      {
+        time = "2024-04-29T22:01:51+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.swaync'.
+
+          SwayNotificationCenter is a simple notification daemon with a GTK GUI
+          for notifications and the control center. See
+          https://github.com/ErikReider/SwayNotificationCenter for more.
+        '';
+      }
+
+      {
+        time = "2024-04-30T18:28:28+00:00";
+        message = ''
+          A new module is available: 'programs.freetube'.
+
+          FreeTube is a YouTube client built around using YouTube more
+          privately. You can enjoy your favorite content and creators without
+          your habits being tracked. See https://freetubeapp.io/ for more.
+        '';
+      }
+
+      {
+        time = "2024-04-30T21:57:23+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.conky'.
+
+          Conky is a system monitor for X. Conky can display just about
+          anything, either on your root desktop or in its own window. See
+          https://conky.cc/ for more.
+        '';
+      }
+
+      {
+        time = "2024-05-05T07:22:01+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.hypridle'.
+
+          Hypridle is a program that monitors user activity and runs commands
+          when idle or active. See https://github.com/hyprwm/hypridle for more.
+        '';
+      }
+
+      {
+        time = "2024-05-06T07:36:13+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.gnome-shell'.
+
+          GNOME Shell is the graphical shell of the GNOME desktop environment.
+          It provides basic functions like launching applications and switching
+          between windows, and is also a widget engine.
+        '';
+      }
+
+      {
+        time = "2024-05-10T10:30:58+00:00";
+        message = ''
+          A new module is available: 'programs.fastfetch'.
+
+          Fastfetch is a Neofetch-like tool for fetching system information and
+          displaying them in a pretty way. See
+          https://github.com/fastfetch-cli/fastfetch for more.
+        '';
+      }
+
+      {
+        time = "2024-05-10T11:48:34+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.hyprlock'.
+
+          Hyprland's simple, yet multi-threaded and GPU-accelerated screen
+          locking utility. See https://github.com/hyprwm/hyprlock for more.
+        '';
+      }
+
+      {
+        time = "2024-05-10T13:35:19+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.hyprpaper'.
+
+          Hyprpaper is a blazing fast wallpaper utility for Hyprland with the
+          ability to dynamically change wallpapers through sockets. It will work
+          on all wlroots-based compositors, though. See
+          https://github.com/hyprwm/hyprpaper for more.
+        '';
+      }
+
+      {
+        time = "2024-05-10T21:28:38+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'programs.yambar'.
+
+          Yambar is a lightweight and configurable status panel for X11 and
+          Wayland, that goes to great lengths to be both CPU and battery
+          efficient - polling is only done when absolutely necessary.
+
+          See https://codeberg.org/dnkl/yambar for more.
+        '';
+      }
+
+      {
+        time = "2024-05-25T14:36:03+00:00";
+        message = ''
+          Multiple new options are available:
+
+          - 'nix.nixPath'
+          - 'nix.keepOldNixPath'
+          - 'nix.channels'
+        '';
+      }
+
+      {
+        time = "2024-06-22T05:49:48+00:00";
+        condition = hostPlatform.isLinux;
+        message = ''
+          A new module is available: 'services.blanket'.
+
+          Blanket is a program you can use to improve your focus and increase
+          your productivity by listening to different sounds. See
+          https://github.com/rafaelmardojai/blanket for more.
+        '';
+      }
+
+      {
+        time = "2024-06-26T07:07:17+00:00";
+        condition = with config.programs.yazi;
+          enable && (enableBashIntegration || enableZshIntegration
+          || enableFishIntegration || enableNushellIntegration);
+        message = ''
+          Yazi's shell integration wrappers have been renamed from 'ya' to 'yy'.
+
+          A new option `programs.yazi.shellWrapperName` is also available that
+          allows you to override this name.
         '';
       }
     ];

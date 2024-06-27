@@ -90,5 +90,5 @@ func TestParseNewsFile(t *testing.T) {
 
 	news, err := parseNewsFile(f)
 	assert.NoError(err)
-	assert.Len(news, 85)
+	assert.Len(news, 185)
 }
