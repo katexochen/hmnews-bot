@@ -269,7 +269,16 @@ func parseNewsFile(f []byte) ([]newsEntry, error) {
 			switch b {
 			case ';':
 				value = string(f[stringStart:i])
-				state = inBracket
+				if !strings.Contains(value, "with ") {
+					// Some non string value ended.
+					state = inBracket
+				} else {
+					// A with statement ended, still inside a non-string value.
+					// Set the the beginning of the string to the next value,
+					// so when we check value at the next ';', we don't include
+					// the same 'with'.
+					stringStart = i + 1
+				}
 			}
 		case afterStingValue:
 			switch {
