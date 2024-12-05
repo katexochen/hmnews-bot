@@ -1,0 +1,1205 @@
+{
+    "display": "notify",
+    "entries": [
+        {
+            "condition": true,
+            "id": "cdba81cb6bd68a557a9f965ddbf18eb29fa83cf70f89c18f22de32baae7cbd51",
+            "message": "A new module is available: 'services.xidlehook'.\n",
+            "time": "2021-06-02T04:24:10+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d857861226a5554842dc146e23643ca31c0dfbc51007266a963b5f9c8ee1d9de",
+            "message": "A new module is available: 'services.pantalaimon'.\n",
+            "time": "2021-06-07T20:44:00+00:00"
+        },
+        {
+            "condition": true,
+            "id": "5d590e24dbc84e685eadc09826f8ea6fb8861f050bf40012877b0c1f8a86af55",
+            "message": "A new module is available: 'programs.mangohud'.\n",
+            "time": "2021-06-12T05:00:22+00:00"
+        },
+        {
+            "condition": true,
+            "id": "8025c5d983fd3af9ebcc1e0187ce18647c2341dd7d63b1c0ff1d189e11c509c9",
+            "message": "The xmonad module now compiles the configuration before\nlinking the binary to the place xmonad expects to find\nthe compiled configuration (the binary).\n\nThis breaks recompilation of xmonad (i.e. the 'q' binding or\n'xmonad --recompile').\n\nIf this behavior is undesirable, do not use the\n'xsession.windowManager.xmonad.config' option. Instead, set the\ncontents of the configuration file with\n'home.file.\".xmonad/config.hs\".text = \"content of the file\"'\nor 'home.file.\".xmonad/config.hs\".source = ./path-to-config'.\n",
+            "time": "2021-06-16T01:26:16+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d2482c3488d966765cfddad094c216a6f7856a5bfef03d0e431b69239e2c7385",
+            "message": "A new module is available: 'i18n.inputMethod'.\n",
+            "time": "2021-06-24T22:36:11+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9f222e58b9412dbb408e32d88983ce4d880b989380660dcba79e182f362fd0c0",
+            "message": "A new module is available: 'programs.himalaya'.\n",
+            "time": "2021-06-22T14:43:53+00:00"
+        },
+        {
+            "condition": true,
+            "id": "a29586a4f506f738b84bf6be5bd424191030c78e82321283663ca536eadf8fd4",
+            "message": "A new module is available: 'programs.sm64ex'.\n",
+            "time": "2021-07-11T17:45:56+00:00"
+        },
+        {
+            "condition": true,
+            "id": "de96e1d7b9bef64f136702f205dc29b7811b7020d39a8015e28eefcdec801ef2",
+            "message": "A new module is available: 'services.xsettingsd'.\n",
+            "time": "2021-07-15T13:38:32+00:00"
+        },
+        {
+            "condition": true,
+            "id": "7ad1b3273c9d27e20c96eec13bd2143d95481df6f8d76deada96433b9108347f",
+            "message": "A new module is available: 'services.volnoti'.\n",
+            "time": "2021-07-14T20:06:18+00:00"
+        },
+        {
+            "condition": true,
+            "id": "25ca2f6ee94142c44322900f0a79336275da274699b8ff8fcf5cc9fef312a8b4",
+            "message": "A new module is available: 'services.trayer'.\n",
+            "time": "2021-07-23T22:22:31+00:00"
+        },
+        {
+            "condition": true,
+            "id": "0e2bba4248ca004ec9fe8d35736ed7e8f1ac4125d9e0c7622b9db9329fbd8cef",
+            "message": "A new module is available: 'services.notify-osd'.\n",
+            "time": "2021-07-19T01:30:46+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f4ca15f62a94f6aa1f953940fc09ec770cfb8f874f5048a13e8903a16bb0732b",
+            "message": "A new module is available: 'programs.java'.\n",
+            "time": "2021-08-10T21:28:40+00:00"
+        },
+        {
+            "condition": true,
+            "id": "20dd35b074185e6b2c2240c5e1091fc071c93c2c6c18bf05fd8f597b228a26be",
+            "message": "A new module is available: 'services.easyeffects'.\n",
+            "time": "2021-08-11T13:55:51+00:00"
+        },
+        {
+            "condition": true,
+            "id": "16a0c371ab60c2cc64a812a867ce5639260c755adcf8aa35419c2dbb559087a2",
+            "message": "A new module is available: 'services.git-sync'.\n",
+            "time": "2021-08-16T21:59:02+00:00"
+        },
+        {
+            "condition": true,
+            "id": "13d01e41d24fa631cdbce17ed4ca104aca125a0502465791f7e3c6fc0e972145",
+            "message": "A new module is available: 'services.fnott'.\n",
+            "time": "2021-08-26T06:40:59+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d19b538845820f74807437147d405338448a56c410924d8cc797ca1a622641c0",
+            "message": "A new module is available: 'services.betterlockscreen'.\n",
+            "time": "2021-08-31T18:44:26+00:00"
+        },
+        {
+            "condition": true,
+            "id": "e1bc884e6c10503d0c6b98d3da6694704df545d17498c5e00abf94aaa8643701",
+            "message": "A new module is available: 'programs.bottom'.\n",
+            "time": "2021-09-14T21:31:03+00:00"
+        },
+        {
+            "condition": false,
+            "id": "0d4d52ff32cafe5e998cd842f567656deaff2eb26ae062ebc831d167dff7bf34",
+            "message": "'xautolock' is now optional in 'services.screen-locker', and the\n'services.screen-locker' options have been reorganized for clarity.\nSee the 'xautolock' and 'xss-lock' options modules in\n'services.screen-locker'.\n",
+            "time": "2021-09-23T17:04:48+00:00"
+        },
+        {
+            "condition": true,
+            "id": "e6cb51bd36f19f97cb776e237365fe15d9431eb445765224e4932f937b3d7848",
+            "message": "A new module is available: 'programs.atuin'.\n",
+            "time": "2021-10-05T20:55:07+00:00"
+        },
+        {
+            "condition": true,
+            "id": "77314f453e09a5cd961313ae5bf24c6c5f69353b0fd7345927b8d6293fc2dcb5",
+            "message": "A new module is available: 'programs.nnn'.\n",
+            "time": "2021-10-05T22:15:00+00:00"
+        },
+        {
+            "condition": false,
+            "id": "ff9c171a06d44b81de1baebdf6437928f9e53782fa290305050d400dc25b7877",
+            "message": "Rofi version '1.7.0' removed many options that were used by the module\nand replaced them with custom themes, which are more flexible and\npowerful.\n\nYou can replicate your old configuration by moving those options to\n'programs.rofi.theme'. Keep in mind that the syntax is different so\nyou may need to do some changes.\n",
+            "time": "2021-10-08T22:16:50+00:00"
+        },
+        {
+            "condition": true,
+            "id": "10c83c07cefd00855a924fa3d46332436691655c7bbfde00a30699da9d381e0e",
+            "message": "A new module is available: 'programs.hexchat'.\n",
+            "time": "2021-10-23T17:12:22+00:00"
+        },
+        {
+            "condition": false,
+            "id": "ee399067bb85b98bf4063fa9bae27400a6f6aebb48bb80b8b501e4fa56f9e200",
+            "message": "A new module is available: 'wayland.windowManager.sway.swaynag'.\n",
+            "time": "2021-11-21T17:21:04+00:00"
+        },
+        {
+            "condition": false,
+            "id": "5f8d2be8672d73262b36d8ac60728b76d7887ad43878de840aaf698b55e7ddf0",
+            "message": "Taskwarrior version 2.6.0 respects XDG Specification for the config\nfile now. Option 'programs.taskwarrior.config' and friends now\ngenerate the config file at '$XDG_CONFIG_HOME/task/taskrc' instead of\n'~/.taskrc'.\n",
+            "time": "2021-11-23T20:26:37+00:00"
+        },
+        {
+            "condition": true,
+            "id": "85dcb2169b36875c9712164e440fe20cbb49eeba7840da001e12d14c70a01483",
+            "message": "A new module is available: 'programs.less'.\n",
+            "time": "2021-11-30T22:28:12+00:00"
+        },
+        {
+            "condition": false,
+            "id": "ffaf9219f2f2241ff5be022271faeea3206ba82e0464e5485bcfa34386e7d1dc",
+            "message": "The option 'targets.darwin.defaults.\"com.apple.menuextra.battery\".ShowPercent'\nhas been deprecated since it no longer works on the latest version of\nmacOS.\n",
+            "time": "2021-11-29T15:15:59+00:00"
+        },
+        {
+            "condition": false,
+            "id": "96bbaca227637a9bba9f2f8cf9ff071a778d1918275d33ce90d30b95b6c460e1",
+            "message": "The Waybar module now allows defining modules directly under the 'settings'\noption instead of nesting the modules under 'settings.modules'.\nThe Waybar module will also stop reporting errors about unused or misnamed\nmodules.\n",
+            "time": "2021-12-02T02:59:59+00:00"
+        },
+        {
+            "condition": false,
+            "id": "208d4313b5ff5255b047ce96d0d695e80b641345051d508d2a85ac38d0582c60",
+            "message": "The 'lesskey' configuration file is now stored under\n'$XDG_CONFIG_HOME/lesskey' since it is fully supported upstream\nstarting from v596.\n",
+            "time": "2021-12-08T10:23:42+00:00"
+        },
+        {
+            "condition": true,
+            "id": "fe3d38ca01db3e17efd64d125bb881a348934e78667a2c8320beb73dfbb68be7",
+            "message": "A new module is available: 'programs.sqls'.\n",
+            "time": "2021-12-10T23:19:57+00:00"
+        },
+        {
+            "condition": true,
+            "id": "72560de6d5d2bf1fada81bb6725b98742f5d3d3d35dec49827c808af3edfdc9e",
+            "message": "A new module is available: 'programs.navi'.\n",
+            "time": "2021-12-11T11:55:12+00:00"
+        },
+        {
+            "condition": true,
+            "id": "5101fc43f2a72ca14582fde34c76b46d6d8a13f72d14b4f3e93998d430a1a03d",
+            "message": "A new module is available: 'services.gromit-mpx'.\n",
+            "time": "2021-12-11T16:07:00+00:00"
+        },
+        {
+            "condition": true,
+            "id": "6326015997509bb0bc4c6fd0b21b0e63f077a8cf10cce3265728c94820cfbce3",
+            "message": "A new module is available: 'services.opensnitch-ui'.\n",
+            "time": "2021-12-12T17:09:38+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f1e3a0621b6bec0c48f76a0f0b5dbec098c398ef70cc6739f6d822040c6e9052",
+            "message": "A new module is available: 'services.systembus-notify'.\n",
+            "time": "2021-12-21T22:17:30+00:00"
+        },
+        {
+            "condition": true,
+            "id": "a118e787e3ea408a4bf0869bb037e8f76c69ebc92753fa89843b27f5b6bd2df8",
+            "message": "A new module is available: 'xsession.windowManager.herbstluftwm'.\n",
+            "time": "2021-12-31T09:39:20+00:00"
+        },
+        {
+            "condition": true,
+            "id": "3f40eeeb33ab0d14c587507c58577fd44408a02f1102ff1d459b346b798c0b0e",
+            "message": "A new module is available: 'services.swayidle'.\n",
+            "time": "2022-01-03T10:34:45+00:00"
+        },
+        {
+            "condition": true,
+            "id": "10e6772b4f62a05b7f964da8e898ff68cf0dea0517ee016ea15110b91221cb0e",
+            "message": "A new module is available: 'programs.sagemath'.\n",
+            "time": "2022-01-11T12:26:43+00:00"
+        },
+        {
+            "condition": true,
+            "id": "2eec3720a1cbc93e42229cd2ca85d00f16d8752ada21259acad257e251084691",
+            "message": "A new module is available: 'programs.helix'.\n",
+            "time": "2022-01-22T14:36:25+00:00"
+        },
+        {
+            "condition": true,
+            "id": "4d9aa0658d68088af2f06c4d4dfde4f72dd55addf356c795a5a8ca1021df0784",
+            "message": "A new module is available: 'programs.watson'.\n",
+            "time": "2022-01-22T15:12:20+00:00"
+        },
+        {
+            "condition": true,
+            "id": "1e5fcdd03439a4b43aa5169bf4b2b63d6a988bab932fd83e8dcb495ed75ce97d",
+            "message": "A new module is available: 'programs.timidity'.\n",
+            "time": "2022-01-22T15:33:42+00:00"
+        },
+        {
+            "condition": true,
+            "id": "4b374dac23f59fd4575d3f5b2a1be70660b4ffd09da94222f644e746ad6a28ea",
+            "message": "A new module is available: 'programs.tint2'.\n",
+            "time": "2022-01-22T16:54:31+00:00"
+        },
+        {
+            "condition": true,
+            "id": "ff52c66aaed2f6398a04bc7370b11feb05d087aa4ce437a2bc7fbe1f850e6369",
+            "message": "A new module is available: 'programs.pandoc'.\n",
+            "time": "2022-01-22T17:39:20+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f1bdcd2d2f2cc0d6917d9b7baafa97e1eba0c8a2845dca6ff9404c763b3aafda",
+            "message": "A new module is available: 'programs.kodi'.\n",
+            "time": "2022-01-26T22:08:29+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9ae836a459a6afd18df8e6b843d33022478eeb189c5aae5768c170151f89c510",
+            "message": "A new module is available: 'services.twmn'.\n",
+            "time": "2022-02-03T23:23:49+00:00"
+        },
+        {
+            "condition": true,
+            "id": "60f7f4cc7f7cf720cb553070fd7cb6812bec90229d2286ce73942a9cf1640346",
+            "message": "A new module is available: 'programs.zellij'.\n",
+            "time": "2022-02-16T23:50:35+00:00"
+        },
+        {
+            "condition": true,
+            "id": "40f96ccaf4359eec15a4f75375a9a2aa94a4fe1127b31b5fb26bf59393508843",
+            "message": "A new module is available: 'programs.eww'.\n",
+            "time": "2022-02-17T17:12:46+00:00"
+        },
+        {
+            "condition": true,
+            "id": "074ade849b5ed119d9c9e0a7e1380ca27f5b15bddb05c6e67875243e2b0d4358",
+            "message": "A new module is available: 'services.espanso'.\n",
+            "time": "2022-02-17T23:11:13+00:00"
+        },
+        {
+            "condition": true,
+            "id": "ce3332a04306bbf012f7a2a958343f87aa5c012925b85a9935d27cd3e2b4734f",
+            "message": "A new module is available: 'programs.gitui'.\n",
+            "time": "2022-02-24T22:35:22+00:00"
+        },
+        {
+            "condition": false,
+            "id": "e40d13ac4aab3d64adc45bc95f73c4b1c0fba3788ee27eee285eedc220af9244",
+            "message": "A new module is available: 'launchd.agents'\n\nUse this to enable services based on macOS LaunchAgents.\n",
+            "time": "2022-02-26T09:28:57+00:00"
+        },
+        {
+            "condition": true,
+            "id": "7754f24005e6773ad8946ca0469d608c3bd55322893e07b9028d0fce29157622",
+            "message": "A new module is available: 'programs.just'.\n",
+            "time": "2022-03-06T08:50:32+00:00"
+        },
+        {
+            "condition": true,
+            "id": "a0269a45f28126acdb5ec0c4090633c95e4839d70e2a31d8bd3f09f74aefc9df",
+            "message": "A new module is available: 'programs.pubs'.\n",
+            "time": "2022-03-06T09:40:17+00:00"
+        },
+        {
+            "condition": true,
+            "id": "418d133607777499ea6507e105305d65341ca54bff7c2e4f9da500d1ba88ead8",
+            "message": "A new module is available: 'services.fusuma'.\n",
+            "time": "2022-03-13T20:59:38+00:00"
+        },
+        {
+            "condition": true,
+            "id": "016aacc18d5130f9d90dee2f6ef6693235bc569b9e175877f283b959e7bc553e",
+            "message": "A new module is available: 'programs.tealdeer'.\n",
+            "time": "2022-05-02T20:55:46+00:00"
+        },
+        {
+            "condition": true,
+            "id": "95fbe6321fcd1628e83f0533b8a9b2802f325945e6dcdac6ca3e093b7e26c009",
+            "message": "A new module is available: 'services.mopidy'.\n",
+            "time": "2022-05-18T22:09:45+00:00"
+        },
+        {
+            "condition": true,
+            "id": "76cd46f512a1d2c8a55a466190e60933eb97113ffcdf8351344727d13208f89d",
+            "message": "A new module is available: 'programs.mujmap'.\n",
+            "time": "2022-06-21T22:29:37+00:00"
+        },
+        {
+            "condition": true,
+            "id": "7bb08206b32ed0facd679fc6ae855c28070b199a1df698720bf268f2374cad48",
+            "message": "A new module is available: 'programs.micro'.\n",
+            "time": "2022-06-24T17:18:32+00:00"
+        },
+        {
+            "condition": true,
+            "id": "3b697827c28a4b725a35fe649ab5bc95fc58dfb72c4e9e98eed6554be292b5d5",
+            "message": "A new module is available: 'programs.pistol'.\n",
+            "time": "2022-06-24T22:40:27+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9752e506e7468061129c2844294106ade0e8f6b49237863f8807103c4aab66a2",
+            "message": "A new module is available: 'services.sctd'.\n",
+            "time": "2022-06-26T19:29:25+00:00"
+        },
+        {
+            "condition": false,
+            "id": "2517f1fc61fcf449076509d60d26cccc19f031e470a16a4f678bb7ffd738627e",
+            "message": "The 'services.picom' module has been refactored to use structural\nsettings.\n\nAs a result 'services.picom.extraOptions' has been removed in favor of\n'services.picom.settings'. Also, 'services.picom.blur*' were removed\nsince upstream changed the blur settings to be more flexible. You can\nmigrate the blur settings to use 'services.picom.settings' instead.\n",
+            "time": "2022-07-12T08:59:50+00:00"
+        },
+        {
+            "condition": true,
+            "id": "1092cb3d4ac75e97b79a74f7db37780aa4765a33e0c247d016c1809c84346505",
+            "message": "A new module is available: 'programs.librewolf'.\n",
+            "time": "2022-07-13T13:28:54+00:00"
+        },
+        {
+            "condition": false,
+            "id": "1d3e5aca1487aee8b3237085dd40baac083e35a43b6aa6dcb70f1f2f9e358bc7",
+            "message": "A new option is available: 'targets.darwin.currentHostDefaults'.\n\nThis exposes macOS preferences that are available through the\n'defaults -currentHost' command.\n",
+            "time": "2022-07-24T13:17:01+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d6802becc8dc4f40b5aad94c81562d28003b8bb55fc9a3f6aee4a3a1fac172c5",
+            "message": "A new module is available: 'xsession.windowManager.spectrwm'.\n",
+            "time": "2022-07-25T11:29:14+00:00"
+        },
+        {
+            "condition": true,
+            "id": "078b37bcc54400668af0e7a0a6982009ad356d1290d4ec63b3bdf7873f422cf9",
+            "message": "A new module is available: 'services.recoll'.\n",
+            "time": "2022-07-27T12:22:37+00:00"
+        },
+        {
+            "condition": true,
+            "id": "6e457309467c58d8ecc580e681d0d8d1ad919879ac426b52da6931f93a1637dc",
+            "message": "A new module is available: 'programs.hyfetch'.\n",
+            "time": "2022-08-01T16:35:28+00:00"
+        },
+        {
+            "condition": true,
+            "id": "28568b3d43c01a00f9adc3b8433ed39bea0fc08936d3d1eedc61cc476341a9e3",
+            "message": "A new module is available: 'programs.wezterm'.\n",
+            "time": "2022-08-07T09:07:35+00:00"
+        },
+        {
+            "condition": true,
+            "id": "821e4ab966373e26d5e1e56311144d75a013f8a83de97dc7a9711333cdd41fd8",
+            "message": "A new module is available: 'programs.bashmount'.\n",
+            "time": "2022-08-08T16:11:22+00:00"
+        },
+        {
+            "condition": true,
+            "id": "b124d2ccb613bf733cfeb34378e9bd32c24e3d9e5cee17d71e8fe0f3a501bb43",
+            "message": "A new module is available: 'services.pueue'.\n",
+            "time": "2022-08-25T21:01:37+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d93d58fc71abcf8d0dada619dba39dc59f34b9757b983b5d940aca6517397faf",
+            "message": "A new module is available: 'programs.btop'.\n",
+            "time": "2022-09-05T12:33:11+00:00"
+        },
+        {
+            "condition": true,
+            "id": "73c5be79b179814738ca18a84709192c74ebcae8101c2e5b242f3fa2dcb61e7d",
+            "message": "A new module is available: 'editorconfig'.\n",
+            "time": "2022-09-05T11:05:25+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d378d7ffdcef22611cedd07461df06b44068a409d6cbad92610ab6cea49f4e5b",
+            "message": "A new module is available: 'programs.nheko'.\n",
+            "time": "2022-09-08T15:41:46+00:00"
+        },
+        {
+            "condition": true,
+            "id": "e63be2988afebd53f3e31391c2ba1ff1a2484f9c5f3ae1f9968abc5447181e86",
+            "message": "A new module is available: 'programs.yt-dlp'.\n",
+            "time": "2022-09-08T17:50:43+00:00"
+        },
+        {
+            "condition": true,
+            "id": "3616eecd4eb2de80312e472dc2b4271774b08b90db5360a10e4a3ca9f934f0e7",
+            "message": "A new module is available: 'programs.gallery-dl'.\n",
+            "time": "2022-09-09T09:55:50+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f08f19abf7313c84cf32951986c9df36046ff2ef74d681834531bf825265f934",
+            "message": "A new module is available: 'xsession.windowManager.fluxbox'.\n",
+            "time": "2022-09-21T22:42:42+00:00"
+        },
+        {
+            "condition": true,
+            "id": "c3287d41d8c6005d75053f4f28077b08684a0f374b5e63a9f36855509655e9bb",
+            "message": "A new module is available: 'services.safeeyes'.\n",
+            "time": "2022-09-25T21:00:05+00:00"
+        },
+        {
+            "condition": true,
+            "id": "8d05c9074f8029e48f463f99822da5c3b5f5b925fbec84e6e0224981e74e3cd7",
+            "message": "A new module is available: 'programs.tmate'.\n",
+            "time": "2022-09-25T22:22:17+00:00"
+        },
+        {
+            "condition": true,
+            "id": "e2de7a539e36c4ca728b68ceaa2c1b5ba6a6939b94bd357676fdcdd02089fd40",
+            "message": "A new module is available: 'programs.pls'.\n",
+            "time": "2022-09-29T13:43:02+00:00"
+        },
+        {
+            "condition": true,
+            "id": "41f3868cb95c6e55de60236152c64cc486edd99be669c1e702b6e3779f2d4d9e",
+            "message": "A new module is available: 'programs.ledger'.\n",
+            "time": "2022-10-06T23:06:08+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d860b980f9c45c9dd2236c1fcecf9d7780000a88043c6f7a33397869088e6561",
+            "message": "A new module is available: 'programs.havoc'.\n",
+            "time": "2022-10-06T23:19:10+00:00"
+        },
+        {
+            "condition": true,
+            "id": "1183ae2ec8895e3a1964da0970a0b91731b82fe226354471da2857e62afdec1b",
+            "message": "A new module is available: 'programs.discocss'.\n",
+            "time": "2022-10-12T23:10:48+00:00"
+        },
+        {
+            "condition": true,
+            "id": "6c1465a6a9ade1b3e74154f8fe06aa8cb06423e69a62a6a291559882e13d4881",
+            "message": "Two new modules are available:\n\n  - 'programs.borgmatic' and\n  - 'services.borgmatic'.\n\nuse the first to configure the borgmatic tool and the second if you\nwant to automatically run scheduled backups.\n",
+            "time": "2022-10-16T19:49:46+00:00"
+        },
+        {
+            "condition": true,
+            "id": "ead868244a500bbe973bcfd1a69f2da3b09f38a894b7580ccf2d7798cdc3f24f",
+            "message": "A new module is available: 'programs.looking-glass-client'.\n",
+            "time": "2022-10-18T08:07:43+00:00"
+        },
+        {
+            "condition": false,
+            "id": "1c4b5a0e04a71ace5cb7f86701966d376cb694b5c702988030b45e6cd02de290",
+            "message": "It is now possible to configure the default search engine in Firefox\nwith\n\n  programs.firefox.profiles.<name>.search.default\n\nand add custom engines with\n\n  programs.firefox.profiles.<name>.search.engines.\n\nIt is also recommended to set\n\n  programs.firefox.profiles.<name>.search.force = true\n\nsince Firefox will replace the symlink for the search configuration on\nevery launch, but note that you'll lose any existing configuration by\nenabling this.\n",
+            "time": "2022-10-22T17:52:30+00:00"
+        },
+        {
+            "condition": true,
+            "id": "fe7ae367214450144c68d4fad7e743487204b3684bd8e9665b4823dfbc9efe35",
+            "message": "A new module is available: 'programs.k9s'.\n",
+            "time": "2022-10-24T22:05:27+00:00"
+        },
+        {
+            "condition": true,
+            "id": "881b5c6c5f50e254bc9558d7c641419a1b2dddafaddd9b1bd03d717ac17d0d8c",
+            "message": "A new module is available: 'programs.oh-my-posh'.\n",
+            "time": "2022-11-01T23:57:50+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9e0f9f11dccb74a3a962157cc19f6789c69a86964b7dbd6f4bd0578bf39e87a2",
+            "message": "A new module is available: 'xfconf'.\n",
+            "time": "2022-11-02T10:56:14+00:00"
+        },
+        {
+            "condition": true,
+            "id": "cb7f51de2e3bd825533d82473de3fc22b78388d1290598a4c97f9ab5f51630f4",
+            "message": "A new module is available: 'programs.thunderbird'.\n",
+            "time": "2022-11-04T14:56:46+00:00"
+        },
+        {
+            "condition": false,
+            "id": "ab9bd649f5d395724aaeeecfa280bf3973f8c2d351b2df1f25893e439ae912bc",
+            "message": "A new module is available: 'programs.thunderbird'.\n\nPlease note that the Thunderbird packages provided by Nix are\ncurrently not working on macOS. The module can still be used to manage\nconfiguration files by installing Thunderbird manually and setting the\n'programs.thunderbird.package' option to a dummy package, for example\nusing 'pkgs.runCommand'.\n\nThis module requires you to set the following environment variables\nwhen using an installation of Thunderbird that is not provided by Nix:\n\n  export MOZ_LEGACY_PROFILES=1\n  export MOZ_ALLOW_DOWNGRADE=1\n",
+            "time": "2022-11-13T09:05:51+00:00"
+        },
+        {
+            "condition": false,
+            "id": "aef6cd12b8d1faa88ad521fca94f325cd67fb97257c96a496c658c9471e2ec2d",
+            "message": "'programs.ssh.matchBlocks.*' now supports literal 'Match' blocks via\n'programs.ssh.matchBlocks.*.match' option as an alternative to plain\n'Host' blocks\n",
+            "time": "2022-11-27T13:14:01+00:00"
+        },
+        {
+            "condition": true,
+            "id": "2c545cdacbeeecdd368a0a7e23aded7702757a9cc1a13bedb180c302d9b7d1a5",
+            "message": "A new module is available: 'services.megasync'.\n",
+            "time": "2022-12-16T15:01:20+00:00"
+        },
+        {
+            "condition": true,
+            "id": "ea5fbb90761a46b624f82919f57775b64a95fe1d29f1d7f86ddb552f14c3fc38",
+            "message": "A new module is available: 'services.cachix-agent'.\n",
+            "time": "2022-12-25T08:41:32+00:00"
+        },
+        {
+            "condition": true,
+            "id": "96795ab41a9c946d5039891b70b9085a3f10180357f67f06227cd08df903627c",
+            "message": "A new module is available: 'services.clipman'.\n",
+            "time": "2022-12-28T21:48:22+00:00"
+        },
+        {
+            "condition": true,
+            "id": "72659deb18cb2feac0ce7655f327e683a62252f9bff6601edff76f3d8678d428",
+            "message": "'xsession.windowManager.i3.config.[window|floating].titlebar' and\n'wayland.windowManager.sway.config.[window|floating].titlebar' now default to 'true'.\n",
+            "time": "2023-01-07T10:47:03+00:00"
+        },
+        {
+            "condition": true,
+            "id": "a772347b64eafd267cab53b9f2fbf2299ea4ef270432aac672e02180ef9bee19",
+            "message": "A new module is available: 'programs.papis'.\n",
+            "time": "2023-01-28T17:35:49+00:00"
+        },
+        {
+            "condition": true,
+            "id": "715b4e3509c4051d065c320ea2705a62d91991c3d0039ab1388a280968b73788",
+            "message": "A new module is available: 'programs.wlogout'.\n",
+            "time": "2023-01-30T10:39:11+00:00"
+        },
+        {
+            "condition": true,
+            "id": "5b27588a2e89e52fb6148dbcf1fc375d12972852e065a98379d512d4b36afb89",
+            "message": "A new module is available: 'programs.rbenv'.\n",
+            "time": "2023-01-31T22:08:41+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f77d4a01ef42f9a48961c305923c7516c227d21bbb862ec37566d07e1844a49a",
+            "message": "A new module is available: 'services.autorandr'.\n",
+            "time": "2023-02-02T20:49:05+00:00"
+        },
+        {
+            "condition": true,
+            "id": "374fa4a8436bcb715da71176b1483dc2111936c0376b848d15e7234cd46eed73",
+            "message": "A new module is available: 'services.mpd-mpris'.\n",
+            "time": "2023-02-20T22:31:23+00:00"
+        },
+        {
+            "condition": true,
+            "id": "3ee71272c1dc8a3956990880fbf142fcb82c54de28989ab77d63a4598e8acf97",
+            "message": "A new module is available: 'services.avizo'.\n",
+            "time": "2023-02-22T22:16:37+00:00"
+        },
+        {
+            "condition": false,
+            "id": "d2110290f5609cf3abd4189a0b11bf219716d0be5a67dda3323dced7c2e4f399",
+            "message": "Module 'i3status-rust' was updated to support the new configuration\nformat from 0.30.x releases, that introduces many breaking changes.\nThe documentation was updated with examples from 0.30.x to help\nthe transition.\n\nSee https://github.com/greshake/i3status-rust/blob/v0.30.0/NEWS.md\nfor instructions on how to migrate.\n\nUsers that don't want to migrate yet can set\n'programs.i3status-rust.package' to an older version.\n",
+            "time": "2023-03-16:12:00+00:00"
+        },
+        {
+            "condition": true,
+            "id": "bd91fc25b57395dff7ee7e089dcd0843e21c45deeb7d95c231e3fbf54f97028a",
+            "message": "A new module is available: 'services.listenbrainz-mpd'.\n",
+            "time": "2023-03-22T07:20:00+00:00"
+        },
+        {
+            "condition": true,
+            "id": "e14b1de60d65e5c56a67d0c4d8b795ea22a7465c1ac3701c93c5da9bc7da7a81",
+            "message": "A new module is available: 'services.copyq'.\n",
+            "time": "2023-03-22T07:31:38+00:00"
+        },
+        {
+            "condition": false,
+            "id": "f5c3732f8a7609b03fde0d2f1ae3ab3f97eeacb5e762f004214cda8a2fa79376",
+            "message": "A new module is available: 'services.syncthing'.\n",
+            "time": "2023-03-25T11:03:24+00:00"
+        },
+        {
+            "condition": true,
+            "id": "606e1bf9c13b961991e16b2a49c71f239d67eeeba1b54bd75bc44da3c29c1aee",
+            "message": "A new module is available: 'programs.hstr'.\n",
+            "time": "2023-03-25T14:53:57+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9ec14be2a951c76d9a8bd7e2a6b7eb41fdfcd08b34a167b76211218d42d2fa0f",
+            "message": "A new module is available: 'services.batsignal'.\n",
+            "time": "2023-04-18T06:28:31+00:00"
+        },
+        {
+            "condition": true,
+            "id": "eedab9985df5b5b0ccfceefd95c0490a23e34ff432cfd8328eb25149156ca1fe",
+            "message": "A new module is available: 'programs.mr'.\n",
+            "time": "2023-04-19T15:33:07+00:00"
+        },
+        {
+            "condition": true,
+            "id": "c7152e13959619d16c6f74253495ab0a440e22874db455ab2d20e8ce39209067",
+            "message": "A new module is available: 'programs.jujutsu'.\n",
+            "time": "2023-04-28T19:59:23+00:00"
+        },
+        {
+            "condition": true,
+            "id": "8aec1601d444506c4302ef57cb8bbe2c0774779971c3d79f008c8e9cce022c60",
+            "message": "A new module is available: 'programs.git-cliff'.\n",
+            "time": "2023-05-09T16:06:56+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f32991013b03cb304c3b6d87fb6349abf4aa576a2c68fe3e16ee2f091ab3a992",
+            "message": "A new module is available: 'programs.translate-shell'.\n",
+            "time": "2023-05-12T21:31:05+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d2a9fe37a2e3dfc6754c76ab4c0a598d947e98c706d3494eb7e6e5eadc4b238f",
+            "message": "A new module is available: 'programs.fuzzel'.\n",
+            "time": "2023-05-13T13:51:18+00:00"
+        },
+        {
+            "condition": false,
+            "id": "6a017a2ca0db117cd156df314896056d444504d57def1e2eebe30b6acc85820f",
+            "message": "The module 'programs.ssh' can now install an SSH client. The installed\nclient is controlled by the 'programs.ssh.package` option, which\ndefaults to 'null'.\n",
+            "time": "2023-05-13T14:34:21+00:00"
+        },
+        {
+            "condition": true,
+            "id": "fbf2160cded8a8a3f9402c6cf507ca2074c7a1df05d4ac8b24108e27f0bd6073",
+            "message": "A new module is available: 'programs.script-directory'.\n",
+            "time": "2023-05-18T21:03:30+00:00"
+        },
+        {
+            "condition": true,
+            "id": "ed414dbf961e435d42fc9fc00ffd55592c7db404484f28b19fb48bf37017a7f2",
+            "message": "A new module is available: 'programs.ripgrep'.\n",
+            "time": "2023-06-03T22:19:32+00:00"
+        },
+        {
+            "condition": true,
+            "id": "ab43265c71f2014fd96b389721826b319621e73e21d1592c8a3b0c78d7e7ddae",
+            "message": "A new module is available: 'programs.rtx'.\n",
+            "time": "2023-06-07T06:01:16+00:00"
+        },
+        {
+            "condition": true,
+            "id": "53db8ce0b49643284e11797176eb8c4a2c1fd24cf925f02273f6aa6f21a01dda",
+            "message": "A new module is available: 'programs.imv'.\n",
+            "time": "2023-06-07T12:16:55+00:00"
+        },
+        {
+            "condition": true,
+            "id": "4b281ae9a1d60abe1086c790fd0d77a5419d45e5495c17aa0ac6025e043e09a0",
+            "message": "A new module is available: 'programs.boxxy'.\n",
+            "time": "2023-06-09T19:13:39+00:00"
+        },
+        {
+            "condition": true,
+            "id": "fc295c0dbf88fbb8ff07d52fdca1b4c743a9bb2bf404cacbb764e01ab0987104",
+            "message": "A number of new modules are available:\n\n  - 'accounts.calendar',\n  - 'accounts.contact',\n  - 'programs.khal',\n  - 'programs.vdirsyncer', and\n  - 'services.vdirsyncer' (Linux only).\n\nThe two first modules offer a number of options for\nconfiguring calendar and contact accounts. This includes,\nfor example, information about carddav and caldav servers.\n\nThe khal and vdirsyncer modules make use of this new account\ninfrastructure.\n\nNote, these module are still somewhat experimental and their\nstructure should not be seen as final, some modifications\nmay be necessary as new modules are added.\n",
+            "time": "2020-04-26T13:32:17+00:00"
+        },
+        {
+            "condition": true,
+            "id": "dab1820878911f9a26c4b5543c3ce4c4117acdf7f686ffdf2a2161a81dc26b71",
+            "message": "A new module is available: 'programs.git-credential-oauth'.\n",
+            "time": "2023-06-14T21:25:34+00:00"
+        },
+        {
+            "condition": true,
+            "id": "6195ad3b907870ebfe0e2361915101deb1d928b2cbcab01296aba3b6b061d7cc",
+            "message": "Two new modules are available:\n\n  - 'programs.comodoro' and\n  - 'services.comodoro'\n",
+            "time": "2023-06-14T21:41:22+00:00"
+        },
+        {
+            "condition": false,
+            "id": "63fa516cf6bc673694bc184daca8d65a05c113be7d2c071d3d08d41e7a87aeef",
+            "message": "Qt module now supports new platform themes and styles, and has partial\nsupport for Qt6. For example, you can now use:\n\n- `qt.platformTheme = \"kde\"`: set a theme using Plasma. You can\nconfigure it by setting `~/.config/kdeglobals` file;\n- `qt.platformTheme = \"qtct\"`: set a theme using qt5ct/qt6ct. You\ncan control it by using the `qt5ct` and `qt6ct` applications;\n- `qt.style.name = \"kvantum\"`: override the style by using themes\nwritten in SVG. Supports many popular themes.\n",
+            "time": "2023-06-15T16:30:00+00:00"
+        },
+        {
+            "condition": false,
+            "id": "e3ebe41ce624f8b68138043bde908255b7c47ea433e5788520c97d675bbbbc43",
+            "message": "A new module is available: 'programs.zsh.antidote'\n",
+            "time": "2023-06-17T22:18:22+00:00"
+        },
+        {
+            "condition": true,
+            "id": "fb5fe8d9fa7d0fdb0a56dd9b319e376e4f01786c81663d8d30e4d063c41b12a9",
+            "message": "A new module is available: 'services.ssh-agent'\n",
+            "time": "2023-06-30T14:46:22+00:00"
+        },
+        {
+            "condition": true,
+            "id": "3444727ae03fbf21e5128db2b89e0a0f6cf4ba1ba4c1f0e1f4239b9f589730dd",
+            "message": "A new modules is available: 'programs.darcs'\n",
+            "time": "2023-07-08T08:27:41+00:00"
+        },
+        {
+            "condition": true,
+            "id": "2048cf2fdc7f8a73bf64081a2b3659bc79c8869e79ec52fa384430cdafcb9b4c",
+            "message": "A new module is available: 'programs.pyenv'.\n",
+            "time": "2023-07-08T09:21:06+00:00"
+        },
+        {
+            "condition": true,
+            "id": "897ecfa00dfabf8b987310146aa0bdd932de9283ca7fb0aa465667ab83f5f72b",
+            "message": "A new module is available: 'services.swayosd'\n",
+            "time": "2023-07-08T09:44:56+00:00"
+        },
+        {
+            "condition": true,
+            "id": "efdc66c3d390c20ac048a27db8e420926ffbe5418f4e2cdb208f17c299f4003f",
+            "message": "A new module is available: 'wayland.windowManager.hyprland'\n",
+            "time": "2023-07-20T21:56:49+00:00"
+        },
+        {
+            "condition": true,
+            "id": "14c19c3afca7e0a3756d55454f8cb08d5d7977a7f9ea44489973dba4ae8fb945",
+            "message": "A new module is available: 'programs.gh-dash'\n",
+            "time": "2023-07-24T10:38:23+00:00"
+        },
+        {
+            "condition": false,
+            "id": "16a0c371ab60c2cc64a812a867ce5639260c755adcf8aa35419c2dbb559087a2",
+            "message": "A new module is available: 'services.git-sync'.\n",
+            "time": "2023-07-25T07:16:09+00:00"
+        },
+        {
+            "condition": true,
+            "id": "5e62027b708a0b3c396962becb9caad25a20ce387825ad0692c2bfe95be376c7",
+            "message": "A new module is available: 'programs.xplr'.\n",
+            "time": "2023-08-15T15:45:45+00:00"
+        },
+        {
+            "condition": true,
+            "id": "5ea43b6a0a309237cdb860b1938af8dcbdae6fece082ee3b76ee9d74cabb239d",
+            "message": "A new module is available: 'programs.pqiv'.\n",
+            "time": "2023-08-16T15:43:30+00:00"
+        },
+        {
+            "condition": true,
+            "id": "1ce004b7b27be8a1420af43a8edadf78c9fd88667cde1ace79ed595a1a2b3552",
+            "message": "A new module is available: 'programs.qcal'.\n",
+            "time": "2023-08-22T16:06:52+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f3b5ffac174ebff451f0be810b94f37b8111c348dfb45476e6f29f86624580bf",
+            "message": "A new module is available: 'programs.yazi'.\n",
+            "time": "2023-08-23T12:01:06+00:00"
+        },
+        {
+            "condition": true,
+            "id": "48e39ce42d88c2e8cd2fd05644c5b612e650748bf78a0963474eb4e96255ef68",
+            "message": "A new module is available: 'programs.carapace'.\n",
+            "time": "2023-09-05T06:38:05+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f22dcae40ba14142caf5bae8c7e607aad5952d075821c9dcd999f4f744057b79",
+            "message": "A new module is available: 'programs.eza'.\n",
+            "time": "2023-09-07T14:52:19+00:00"
+        },
+        {
+            "condition": true,
+            "id": "5262b698b4e48bf5c7fa96463287e914755524a29f4945c7da52249af50d768e",
+            "message": "A new module is available: 'programs.rio'.\n\nRio is a hardware-accelerated GPU terminal emulator powered by WebGPU.\n",
+            "time": "2023-09-18T11:44:11+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9f75c5123afdabd3adad8231bf90eb76db2adca9f6f56833da91bb93426b62aa",
+            "message": "A new module is available: 'programs.bacon'.\n",
+            "time": "2023-09-24T10:06:47+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f263cdb8add092f10aeb4abf98877e68cbfd2a41f6ba2e2816fd152c12265372",
+            "message": "A new module is available: 'programs.awscli'.\n",
+            "time": "2023-09-30T07:47:23+00:00"
+        },
+        {
+            "condition": true,
+            "id": "2f79a893d1f148337157c7ef99becd27bb579c2be96d1b05ef2c79e8547ef324",
+            "message": "A new module is available: 'programs.wpaperd'.\n",
+            "time": "2023-10-01T07:23:26+00:00"
+        },
+        {
+            "condition": true,
+            "id": "e3290f91d4445c8e12739a904dc07f817067ea884ff190ab9f2b7547830046ac",
+            "message": "A new module is available: 'programs.khard'.\n",
+            "time": "2023-10-01T07:28:45+00:00"
+        },
+        {
+            "condition": false,
+            "id": "6776d0cb3f7ae57ffc0f9a5503ca8b8843af3d26841c212d3c382c1884068238",
+            "message": "A new module is available: 'programs.zsh.zsh-abbr'\n",
+            "time": "2023-10-04T06:06:08+00:00"
+        },
+        {
+            "condition": true,
+            "id": "62ffdb0db62a28b6e613f8d8a72ae1e432dd66b3f84ad9dbbbc401def3e22d9d",
+            "message": "A new module is available: 'programs.thefuck'.\n",
+            "time": "2023-10-04T06:44:15+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d89ba37c777c96f18e9bf92c9c57eaf0cb5f776ad43c356667cf499610cd064b",
+            "message": "A new module is available: 'programs.openstackclient'.\n",
+            "time": "2023-10-04T18:35:42+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9d1b38b0f14ae5d3c00000f819cb50ffa0791463d87713435cc8e0da8118eae8",
+            "message": "A new module is available: 'services.darkman'.\n",
+            "time": "2023-10-17T06:33:24+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d5deb834d98d309f8cd56da9b0f02544eaaae159e854b338aa2bb320ee4fbdfb",
+            "message": "A new module is available: 'programs.cava'.\n",
+            "time": "2023-10-24T06:14:53+00:00"
+        },
+        {
+            "condition": true,
+            "id": "74f72fa05a01d6e6f049ddd6bae9b9b8618acfe48400b687c20ed5771f840093",
+            "message": "A new module is available: 'programs.granted'.\n",
+            "time": "2023-11-01T21:18:20+00:00"
+        },
+        {
+            "condition": true,
+            "id": "adedae6ea08c860a780e6b22155ab0586cfba65ccdd53748486197134b11fa48",
+            "message": "A new module is available: 'programs.ruff'.\n",
+            "time": "2023-11-22T22:42:16+00:00"
+        },
+        {
+            "condition": true,
+            "id": "1e0fb06e3a5b6ba6bf00ca5a337e4254c6c6caabea5212607de64c5285074a66",
+            "message": "A new module is available: 'services.signaturepdf'.\n",
+            "time": "2023-11-26T23:18:01+00:00"
+        },
+        {
+            "condition": false,
+            "id": "ded90747c7fb6127095f93c41cb412dc0df3df80d748e6bfe110ae4acd93fcb9",
+            "message": "Entries in\n\n  wayland.windowManager.hyprland.settings.source\n\nare now placed at the start of the configuration file. If you relied\non the previous placement of the 'source' entries, please set\n\n   wayland.windowManager.hyprland.sourceFirst = false\n\nto keep the previous behaviour.\n",
+            "time": "2023-12-10T08:43:02+00:00"
+        },
+        {
+            "condition": true,
+            "id": "6144f8db9b6ebdc6142b3b12c341e452731ac15ba93c4054d5f7660ba212f17f",
+            "message": "A new module is available: 'programs.sapling'.\n",
+            "time": "2023-12-19T22:57:52+00:00"
+        },
+        {
+            "condition": true,
+            "id": "f9811b89733dd4037394100294e07bf0acbb0f502e954e18b3a976a50330bc9c",
+            "message": "A new module is available: 'programs.gradle'.\n",
+            "time": "2023-12-20T11:41:10+00:00"
+        },
+        {
+            "condition": true,
+            "id": "5495aed2a7766debd494f54db61ab016f081448f7b3555376255fa6135323d17",
+            "message": "A new module is available: 'services.osmscout-server'.\n",
+            "time": "2023-12-28T08:28:26+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d648c951b035502a719c7bcc0382904437b475e4a81c65b00ec5263cc1f1104c",
+            "message": "A new module is available: 'programs.sftpman'.\n",
+            "time": "2023-12-28T13:01:15+00:00"
+        },
+        {
+            "condition": true,
+            "id": "8c8c1809d79f647355b51651ff760205778bd7c2e68a3af5e3b78349442d515c",
+            "message": "A new module is available: 'programs.bemenu'.\n",
+            "time": "2023-12-29T08:22:40+00:00"
+        },
+        {
+            "condition": true,
+            "id": "7673f0f4c60da0cce25011d39f96675c2f42ca0ff83ff7abd38c3d505dcbca74",
+            "message": "A new module is available: 'programs.i3blocks'.\n",
+            "time": "2024-01-01T09:09:42+00:00"
+        },
+        {
+            "condition": true,
+            "id": "535fe22bcac298aa6545f008aaa1c1b64657a6d2ae82bc0a788da3af9b3bd5f9",
+            "message": "A new module is available: 'xdg.portal'.\n",
+            "time": "2024-01-03T19:25:09+00:00"
+        },
+        {
+            "condition": true,
+            "id": "0ef6685c6ac708abd202cd4c5decac11f8a0c9737f0a02628b21693a6bb2e511",
+            "message": "A new module is available: 'programs.mise'.\n\nThis module replaces 'programs.rtx', which has been removed.\n",
+            "time": "2024-01-20T23:45:07+00:00"
+        },
+        {
+            "condition": true,
+            "id": "41039507ebea94d37f485528eef259a709eae5275eee4d4ed3791cfb29baf855",
+            "message": "A new module is available: 'services.wob'.\n",
+            "time": "2024-01-27T22:53:00+00:00"
+        },
+        {
+            "condition": true,
+            "id": "44500aae2474fa522807c50ed724f5faebe9ff56c1f50d7f54fb6713dd432d02",
+            "message": "A new module is available: 'services.arrpc'\n",
+            "time": "2024-02-05T22:33:54+00:00"
+        },
+        {
+            "condition": true,
+            "id": "c16c2a56a1ea33c197ebf1073fce64ec462dd6d7ad761f62249579bde262bf35",
+            "message": "A new module is available: 'programs.jetbrains-remote'\n",
+            "time": "2024-02-05T22:45:37+00:00"
+        },
+        {
+            "condition": true,
+            "id": "90dbb52edba601a26f700b5e34f1a3468c4e540151f67e4bc9e81c87d1824160",
+            "message": "A new module is available: 'wayland.windowManager.river'.\n",
+            "time": "2024-02-21T23:01:27+00:00"
+        },
+        {
+            "condition": true,
+            "id": "539c83a0d81833e1ca3c5931a6f5fc2a4000a43a31533b12cdec49b65161bae1",
+            "message": "A new module is available: 'programs.zk'\n",
+            "time": "2024-03-08T22:20:04+00:00"
+        },
+        {
+            "condition": true,
+            "id": "bac17fe6248fd671fee343f462607f9d76a7cf1f8c69b207d50b2ca29b1d9a7a",
+            "message": "A new module is available: 'programs.ranger'.\n",
+            "time": "2024-03-08T22:23:24+00:00"
+        },
+        {
+            "condition": true,
+            "id": "c84c66aa15f6fcd20f1a5315ff5b2ff0647e71138e67dc142b9bc8bfda0efb2b",
+            "message": "A new module is available: 'programs.joplin-desktop'.\n",
+            "time": "2024-03-13T13:28:22+00:00"
+        },
+        {
+            "condition": false,
+            "id": "730c7a138c04982c206a54fb36c704f9cfd9fe2583faecf7ecfee2f5c4a45bd3",
+            "message": "'services.gpg-agent.pinentryFlavor' has been removed and replaced by\n'services.gpg-agent.pinentryPackage'.\n",
+            "time": "2024-03-14T07:22:09+00:00"
+        },
+        {
+            "condition": false,
+            "id": "9c7ac28307ac2e6f241659177c4ee159c8787a7576ca4fe965f810bc9d827611",
+            "message": "'programs.rbw.pinentry' has been simplified to only accept 'null' or\na package.\n",
+            "time": "2024-03-14T07:22:59+00:00"
+        },
+        {
+            "condition": true,
+            "id": "a54a51d5d86332dacaa1ec44101b04973566b7f551ec473dcb0ec90a1a4d4be1",
+            "message": "A new module is available: 'services.activitywatch'.\n",
+            "time": "2024-03-15T08:39:52+00:00"
+        },
+        {
+            "condition": true,
+            "id": "938ac5c08b7325adcc693bde41d32b9f3327649896d8e9809cd932f19097ae35",
+            "message": "A new module is available: 'services.amberol'.\n",
+            "time": "2024-03-28T17:02:19+00:00"
+        },
+        {
+            "condition": true,
+            "id": "1294619d5639d9d7ce096de7020441a4b7e763e0e6c057ac70a5e9a737fbea25",
+            "message": "A new module is available: 'programs.bun'.\n",
+            "time": "2024-04-08T21:43:38+00:00"
+        },
+        {
+            "condition": true,
+            "id": "75b98c562ade54dfe48fa4d9e385563af8e8fea65d3cb8e4c09e27fe83f4d118",
+            "message": "A new module is available: 'programs.fd'.\n",
+            "time": "2024-04-18T22:30:49+00:00"
+        },
+        {
+            "condition": true,
+            "id": "81a62063af8e6a19e0a4dec2a77068c109e175bac07b7013a8279a01da19a22b",
+            "message": "A new module is available: 'programs.tofi'.\n",
+            "time": "2024-04-19T09:23:52+00:00"
+        },
+        {
+            "condition": true,
+            "id": "2d401b5a462cb668724a5811e6f0eab10037619e402dbef30c897e87f5e13d58",
+            "message": "A new module is available: 'programs.spotify-player'.\n",
+            "time": "2024-04-19T10:01:55+00:00"
+        },
+        {
+            "condition": true,
+            "id": "e4643c58fef98ed7d6414fc5786c82f8bda6341f71a49972e1f4b921c4b90c93",
+            "message": "A new module is available: 'services.remmina'.\n",
+            "time": "2024-04-19T14:53:17+00:00"
+        },
+        {
+            "condition": true,
+            "id": "9a84df5614c7d22586dbc105c8af0d319d070a62d58bc7d4ba38120f08f43ded",
+            "message": "A new module is available: 'programs.poetry'.\n\nPoetry is a tool that helps you manage Python project dependencies and\npackages. See https://python-poetry.org/ for more.\n",
+            "time": "2024-04-21T20:53:09+00:00"
+        },
+        {
+            "condition": true,
+            "id": "b87cb74a665fa47b78602eae2e1ae7b792ccd944203f34931ed533ebaf1439a2",
+            "message": "A new module is available: 'services.amberol'.\n\nAmberol is a music player with no delusions of grandeur. If you just\nwant to play music available on your local system then Amberol is the\nmusic player you are looking for. See https://apps.gnome.org/Amberol/\nfor more.\n",
+            "time": "2024-04-22T18:04:47+00:00"
+        },
+        {
+            "condition": true,
+            "id": "2ccaa7540bb7b6f7662f192ccee66ae90b944787c3f19ca2f42488142556df02",
+            "message": "A new module is available: 'services.psd'.\n\nProfile-sync-daemon (psd) is a tiny pseudo-daemon designed to manage\nyour browser's profile in tmpfs and to periodically sync it back to\nyour physical disc (HDD/SSD).\n",
+            "time": "2024-04-28T20:27:08+00:00"
+        },
+        {
+            "condition": true,
+            "id": "ab8e5d47ba638b3d55011665959c0edb1964ca88940def5a609a8d9f06a8221b",
+            "message": "A new module is available: 'services.swaync'.\n\nSwayNotificationCenter is a simple notification daemon with a GTK GUI\nfor notifications and the control center. See\nhttps://github.com/ErikReider/SwayNotificationCenter for more.\n",
+            "time": "2024-04-29T22:01:51+00:00"
+        },
+        {
+            "condition": true,
+            "id": "977760a9cfce7765b93dc4797a28d85258108e2b83608301ec794a70d60b0921",
+            "message": "A new module is available: 'programs.freetube'.\n\nFreeTube is a YouTube client built around using YouTube more\nprivately. You can enjoy your favorite content and creators without\nyour habits being tracked. See https://freetubeapp.io/ for more.\n",
+            "time": "2024-04-30T18:28:28+00:00"
+        },
+        {
+            "condition": true,
+            "id": "23f7980f8eac20f975c0169f27c71c2ace82085bb5fbf706884b76e1c6bca8ad",
+            "message": "A new module is available: 'services.conky'.\n\nConky is a system monitor for X. Conky can display just about\nanything, either on your root desktop or in its own window. See\nhttps://conky.cc/ for more.\n",
+            "time": "2024-04-30T21:57:23+00:00"
+        },
+        {
+            "condition": true,
+            "id": "fabc8f885c1b4facaf423775ceab2446469314506321e07662bebb4d33784cd9",
+            "message": "A new module is available: 'services.hypridle'.\n\nHypridle is a program that monitors user activity and runs commands\nwhen idle or active. See https://github.com/hyprwm/hypridle for more.\n",
+            "time": "2024-05-05T07:22:01+00:00"
+        },
+        {
+            "condition": true,
+            "id": "18e99bb1e5b4cc89d18b9516f54f7fb4faf36ed4af58b0aaa103fcddfeff1ce9",
+            "message": "A new module is available: 'programs.gnome-shell'.\n\nGNOME Shell is the graphical shell of the GNOME desktop environment.\nIt provides basic functions like launching applications and switching\nbetween windows, and is also a widget engine.\n",
+            "time": "2024-05-06T07:36:13+00:00"
+        },
+        {
+            "condition": true,
+            "id": "066cccc99bed5df9ec7f3376b46b2c3ef66b90e6b4140d5e069737c06cd833f8",
+            "message": "A new module is available: 'programs.fastfetch'.\n\nFastfetch is a Neofetch-like tool for fetching system information and\ndisplaying them in a pretty way. See\nhttps://github.com/fastfetch-cli/fastfetch for more.\n",
+            "time": "2024-05-10T10:30:58+00:00"
+        },
+        {
+            "condition": true,
+            "id": "0ba67ba8edae07bcd6677ff4f223eee5ea14dad9f42beec5119b4d35e7dfee15",
+            "message": "A new module is available: 'programs.hyprlock'.\n\nHyprland's simple, yet multi-threaded and GPU-accelerated screen\nlocking utility. See https://github.com/hyprwm/hyprlock for more.\n",
+            "time": "2024-05-10T11:48:34+00:00"
+        },
+        {
+            "condition": true,
+            "id": "4fcbe5c5f3abeeb8463a7fb687832faf1a8fd08b727d41233b10cb3a84e81758",
+            "message": "A new module is available: 'services.hyprpaper'.\n\nHyprpaper is a blazing fast wallpaper utility for Hyprland with the\nability to dynamically change wallpapers through sockets. It will work\non all wlroots-based compositors, though. See\nhttps://github.com/hyprwm/hyprpaper for more.\n",
+            "time": "2024-05-10T13:35:19+00:00"
+        },
+        {
+            "condition": true,
+            "id": "6d39912e54b8646a84e8a88e46917f53b5167dda83ae7dd80ed2b15170f1f96b",
+            "message": "A new module is available: 'programs.yambar'.\n\nYambar is a lightweight and configurable status panel for X11 and\nWayland, that goes to great lengths to be both CPU and battery\nefficient - polling is only done when absolutely necessary.\n\nSee https://codeberg.org/dnkl/yambar for more.\n",
+            "time": "2024-05-10T21:28:38+00:00"
+        },
+        {
+            "condition": true,
+            "id": "04a144baa1fd28a0c8bbcf24296d2c7a697de192c6d682eba96a56a4f063a3b5",
+            "message": "Multiple new options are available:\n\n- 'nix.nixPath'\n- 'nix.keepOldNixPath'\n- 'nix.channels'\n",
+            "time": "2024-05-25T14:36:03+00:00"
+        },
+        {
+            "condition": true,
+            "id": "b600f8dc510e84f14499207eb895ab31075b1a79cdf03f437fed90ee92660751",
+            "message": "A new module is available: 'services.blanket'.\n\nBlanket is a program you can use to improve your focus and increase\nyour productivity by listening to different sounds. See\nhttps://github.com/rafaelmardojai/blanket for more.\n",
+            "time": "2024-06-22T05:49:48+00:00"
+        },
+        {
+            "condition": false,
+            "id": "92a407fa8d60c0977446bc65322bd70a2373a64a8101f88988ea0550206417d2",
+            "message": "Yazi's shell integration wrappers have been renamed from 'ya' to 'yy'.\n\nA new option `programs.yazi.shellWrapperName` is also available that\nallows you to override this name.\n",
+            "time": "2024-06-26T07:07:17+00:00"
+        },
+        {
+            "condition": true,
+            "id": "46985533b6c8b341743c6f20606f4597c53c09403c988e2115a9e58d63163ef9",
+            "message": "A new module is available: 'services.glance'.\n\nGlance is a self-hosted dashboard that puts all your feeds in\none place. See https://github.com/glanceapp/glance for more.\n",
+            "time": "2024-06-28T14:18:16+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d9063be97e57194e13f3ed0f9814330666c930a514484ab6570bc338d43d2779",
+            "message": "A new module is available: 'services.trayscale'.\n\nAn unofficial GUI wrapper around the Tailscale CLI client.\n",
+            "time": "2024-09-13T08:58:17+00:00"
+        },
+        {
+            "condition": true,
+            "id": "dda02b16edbdebb55d5db09407695433b432e32e4f7cc92398fa950175719e01",
+            "message": "A new module is available: 'programs.neovide'.\n\nNeovide is a simple, no-nonsense, cross-platform graphical user\ninterface for Neovim (an aggressively refactored and updated Vim\neditor).\n",
+            "time": "2024-09-13T09:50:49+00:00"
+        },
+        {
+            "condition": true,
+            "id": "d74f26c7ceeee436a98ff6d89c14f597e32f5f90420b73eecf144ed15f908fa7",
+            "message": "The option 'programs.kitty.theme' has been deprecated, please use\n'programs.kitty.themeFile' instead.\n\nThe 'programs.kitty.themeFile' option expects the file name of a\ntheme from `kitty-themes`, without the `.conf` suffix. See\n<https://github.com/kovidgoyal/kitty-themes/tree/master/themes> for a\nlist of themes.\n",
+            "time": "2024-09-20T07:00:11+00:00"
+        },
+        {
+            "condition": false,
+            "id": "656ac73d3efb5848aa8845e648b93e3cb5c3ac10850324d20f7044688d702c0e",
+            "message": "The swayidle module behavior has changed. Specifically, swayidle was\npreviously always called with a `-w` flag. This flag is now moved to\nthe default `services.swayidle.extraArgs` value to make it optional.\n\nYour configuration may break if you already set this option and also\nrely on the flag being automatically added. To resolve this, please\nadd `-w` to your assignment of `services.swayidle.extraArgs`.\n",
+            "time": "2024-09-20T07:48:08+00:00"
+        },
+        {
+            "condition": true,
+            "id": "a618410587a9651f7c03f622cdc38a8ea42e373be806c18783421470fdba6656",
+            "message": "A new module is available: 'services.snixembed'.\n\nsnixembed proxies StatusNotifierItems as XEmbedded systemtray-spec\nicons. This is useful for some tools in some environments, e.g., Safe\nEyes in i3, lxde or mate.\n",
+            "time": "2024-10-09T06:16:23+00:00"
+        },
+        {
+            "condition": true,
+            "id": "1f71ff2e9658ddfd514668f7586df62eecfe8d703f0bd8a0600c9e904fbcea39",
+            "message": "A new module is available: 'programs.vifm'.\n\nVifm is a curses based Vim-like file manager extended with some useful\nideas from mutt.\n",
+            "time": "2024-10-11T08:23:19+00:00"
+        },
+        {
+            "condition": true,
+            "id": "32327f2772b2cc281b73ac19e9d579a58dc097cf256600fe09c1a93d226e3e76",
+            "message": "A new module is available: 'programs.zed-editor'.\n\nZed is a fast text editor for macOS and Linux.\nSee https://zed.dev for more.\n",
+            "time": "2024-10-17T13:07:55+00:00"
+        },
+        {
+            "condition": true,
+            "id": "bb0ceb42d2d9ed01ea86e763199bdb61b7120a38a283fdcc7b69f96cf74beb9a",
+            "message": "A new module is available: 'programs.cmus'.\n\ncmus is a small, fast and powerful console music player.\n",
+            "time": "2024-10-18T14:01:07+00:00"
+        },
+        {
+            "condition": true,
+            "id": "af3332cff8e7d3d73aeec634723c4cd651249c786e2e44d78dbb92a468846c1f",
+            "message": "A new module is available: 'programs.nh'.\n\nnh is yet another Nix CLI helper. Adding functionality on top of the\nexisting solutions, like nixos-rebuild, home-manager cli or nix\nitself.\n",
+            "time": "2024-10-20T07:53:54+00:00"
+        },
+        {
+            "condition": true,
+            "id": "c893ccecc29d0847a867f7b5a211d4e5b979073fbbf6eae789344367ccce7e90",
+            "message": "A new module is available: 'nixGL'.\n\nNixGL solve the \"OpenGL\" problem with nix. The 'nixGL' module provides\nintegration of NixGL into Home Manager. See the \"GPU on non-NixOS\nsystems\" section in the Home Manager manual for more.\n",
+            "time": "2024-10-25T08:18:30+00:00"
+        },
+        {
+            "condition": true,
+            "id": "976a40c4cbbbec2021c9c5de9c3ee9c937d985144e04ab3ea964ae75476a5023",
+            "message": "A new module is available: 'services.podman'.\n\nPodman is a daemonless container engine that lets you manage\ncontainers, pods, and images.\n\nThis Home Manager module allows you to define containers that will run\nas systemd services.\n",
+            "time": "2024-11-01T19:44:59+00:00"
+        },
+        {
+            "condition": true,
+            "id": "0d71e1f8c6379e6d5570c06260b2fc2b57075bea579277532e3aa9f63fc84fb4",
+            "message": "A new module is available: 'programs.nix-your-shell'.\n\nnix-your-shell is a wrapper for `nix develop` or `nix-shell` to retain\nthe same shell inside the new environment.\n",
+            "time": "2024-12-01T19:17:40+00:00"
+        },
+        {
+            "condition": true,
+            "id": "cb9f9373eb913913a0702ed4e42c211d7bb325c8f5caa18b4ef66059d8155744",
+            "message": "A new module is available: 'programs.kubecolor'.\n\nKubecolor is a kubectl wrapper used to add colors to your kubectl\noutput.\n",
+            "time": "2024-12-01T19:34:04+00:00"
+        },
+        {
+            "condition": false,
+            "id": "cf6ca18e883b12e21ed75c6b234fe89b5fdd8f15909d2fbc68eae0faafeea654",
+            "message": "A new option 'programs.starship.enableInteractive' is available for\nthe Fish shell that only enables starship if the shell is interactive.\n\nSome plugins require this to be set to 'false' to function correctly.\n",
+            "time": "2024-12-04T20:00:00+00:00"
+        }
+    ]
+}

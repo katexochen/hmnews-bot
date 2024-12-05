@@ -85,10 +85,10 @@ func TestParseNewsFile(t *testing.T) {
 	assert := assert.New(t)
 	require := require.New(t)
 
-	f, err := os.ReadFile("testdata/news.nix")
+	f, err := os.ReadFile("testdata/news.json")
 	require.NoError(err)
 
 	news, err := parseNewsFile(f)
 	assert.NoError(err)
-	assert.Len(news, 185)
+	assert.Len(news, 200)
 }

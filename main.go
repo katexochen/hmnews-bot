@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"html"
@@ -11,7 +12,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"unicode"
 
 	"github.com/mattn/go-mastodon"
 	"github.com/microcosm-cc/bluemonday"
@@ -96,10 +96,10 @@ func findLastTootIdx(ctx context.Context, client *mastodon.Client, news []newsEn
 
 	for _, status := range statuses {
 		for i := len(news) - 1; i >= 0; i-- {
-			newsEntry := news[i].message
+			newsEntry := news[i].Message
 			content := html.UnescapeString(status.Content)
 			if postIsNewsEntry(content, newsEntry) {
-				log.Printf("Message of latest toot found at index %d with message %q", i, news[i].message)
+				log.Printf("Message of latest toot found at index %d with message %q", i, news[i].Message)
 				return i, nil
 			}
 		}
@@ -121,7 +121,7 @@ func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []ne
 			break
 		}
 
-		toots := splitIntoToots(news[i].message)
+		toots := splitIntoToots(news[i].Message)
 
 		var lastStatusID mastodon.ID
 		for j, toot := range toots {
@@ -173,147 +173,24 @@ func splitIntoToots(message string) []string {
 }
 
 type newsEntry struct {
-	time    string
-	message string
+	Time    string `json:"time"`
+	Message string `json:"message"`
+}
+
+type newsFile struct {
+	Entries []newsEntry `json:"entries"`
 }
 
 var spaceRegexp = regexp.MustCompile(`\s+`)
 
 func parseNewsFile(f []byte) ([]newsEntry, error) {
-	startStr := "news.entries = ["
-	idx := strings.Index(string(f), startStr)
-	if idx == -1 {
-		return nil, fmt.Errorf("could not find start of news entries")
+	nf := newsFile{}
+	if err := json.Unmarshal(f, &nf); err != nil {
+		return nil, fmt.Errorf("unmarshaling news file: %w", err)
 	}
-	f = f[idx+len(startStr):]
-
-	var entries []newsEntry
-
-	var stringStart int
-	var firstSingleQuote bool
-	var entry newsEntry
-	var key, value string
-	var state state
-
-	for i, b := range string(f) {
-		switch state {
-		case unknown:
-			switch b {
-			case '{':
-				state = inBracket
-			case ']':
-				break
-			}
-		case inBracket:
-			switch {
-			case unicode.IsSpace(b):
-			case b == '}':
-				log.Printf("Parsed news entry: {time: %q, message: %q}\n", entry.time, entry.message)
-				entries = append(entries, entry)
-				entry = newsEntry{}
-				state = unknown
-			default:
-				stringStart = i
-				state = inKey
-			}
-		case inKey:
-			switch {
-			case unicode.IsSpace(b):
-				key = string(f[stringStart:i])
-				state = afterKey
-			}
-		case afterKey:
-			switch {
-			case unicode.IsSpace(b):
-			case b == '=':
-				state = afterEqual
-			default:
-				return nil, fmt.Errorf("unexpected rune %s after key, expected %q", string(b), "=")
-			}
-		case afterEqual:
-			switch {
-			case unicode.IsSpace(b):
-			case b == '"':
-				firstSingleQuote = false
-				state = inStingValue
-				stringStart = i
-			case b == '\'' && !firstSingleQuote:
-				firstSingleQuote = true
-			case b == '\'' && firstSingleQuote:
-				firstSingleQuote = false
-				state = inSingleQuoteStringValue
-				stringStart = i
-			default:
-				state = inNonStringValue
-				stringStart = i
-			}
-		case inStingValue:
-			switch {
-			case b == '"':
-				value = string(f[stringStart+1 : i])
-				state = afterStingValue
-			default:
-			}
-		case inSingleQuoteStringValue:
-			switch {
-			case b == '\'' && !firstSingleQuote:
-				firstSingleQuote = true
-			case b == '\'' && firstSingleQuote:
-				firstSingleQuote = false
-				value = string(f[stringStart+1 : i-1])
-				state = afterStingValue
-			default:
-				firstSingleQuote = false
-			}
-		case inNonStringValue:
-			switch b {
-			case ';':
-				value = string(f[stringStart:i])
-				if !strings.Contains(value, "with ") {
-					// Some non string value ended.
-					state = inBracket
-				} else {
-					// A with statement ended, still inside a non-string value.
-					// Set the the beginning of the string to the next value,
-					// so when we check value at the next ';', we don't include
-					// the same 'with'.
-					stringStart = i + 1
-				}
-			}
-		case afterStingValue:
-			switch {
-			case unicode.IsSpace(b):
-			case b == ';':
-				switch key {
-				case "time":
-					entry.time = value
-				case "message":
-					m := strings.TrimSpace(value)
-					m = spaceRegexp.ReplaceAllString(m, " ")
-					entry.message = m
-				default:
-					log.Printf("Unknown key: %q\n", key)
-				}
-				key = ""
-				value = ""
-				state = inBracket
-			}
-		}
+	for i := range nf.Entries {
+		m := strings.TrimSpace(nf.Entries[i].Message)
+		nf.Entries[i].Message = spaceRegexp.ReplaceAllString(m, " ")
 	}
-
-	return entries, nil
+	return nf.Entries, nil
 }
-
-type state int
-
-const (
-	unknown state = iota
-	inBracket
-	inKey
-	afterKey
-	afterEqual
-	inStingValue
-	inSingleQuoteStringValue
-	inNonStringValue
-	afterStingValue
-)
