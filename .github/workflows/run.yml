@@ -17,16 +17,21 @@ jobs:
           go-version: "stable"
           cache: true
 
-      - name: Get news file from home-manager
-        run: |
-          curl -fsSL -o news.nix https://raw.githubusercontent.com/nix-community/home-manager/master/modules/misc/news.nix
+      - name: Setup nix
+        uses: cachix/install-nix-action@v11
 
       - name: Build
         run: go build -o hmnb .
 
+      - name: Update flake
+        run: nix flake update
+
+      - name: Build news
+        run: nix build .#homeConfigurations.a.config.news.json.output
+
       - name: Run
         env:
-          HMNB_PATH: news.nix
+          HMNB_PATH: result
           HMNB_MAX_POSTS: 2
           HMNB_MASTODON_SERVER: https://techhub.social/
           HMNB_MASTODON_CLIENT_ID: ${{ secrets.HMNB_MASTODON_CLIENT_ID }}
