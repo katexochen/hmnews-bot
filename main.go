@@ -77,7 +77,6 @@ func main() {
 		return
 	}
 
-	_ = maxPosts
 	if err := postNextNewsEntries(ctx, client, news, latestIdx+1, maxPosts); err != nil {
 		log.Fatalf("posting next news entries: %v", err)
 	}

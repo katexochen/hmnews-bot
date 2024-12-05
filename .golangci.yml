@@ -3,7 +3,9 @@ run:
   modules-download-mode: readonly
 
 output:
-  format: tab
+  formats:
+    - format: tab
+      path: stderr
   sort-results: true
 
 linters:
@@ -19,7 +21,6 @@ linters:
     # Additional linters
     - bodyclose
     - errname
-    - exportloopref
     - godot
     - gofmt
     - gofumpt
