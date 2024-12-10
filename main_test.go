@@ -4,29 +4,30 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
-func TestPostIsNewsEntry(t *testing.T) {
+func TestCanonicalizePost(t *testing.T) {
 	testCases := []struct {
 		post string
 		news string
-		want bool
 	}{
 		{
 			post: `<p>Module 'i3status-rust' was updated to support the new configuration format from 0.30.x releases, that introduces many breaking changes. The documentation was updated with examples from 0.30.x to help the transition. See <a href="https://github.com/greshake/i3status-rust/blob/v0.30.0/NEWS.md" target="_blank" rel="nofollow noopener noreferrer"><span class="invisible">https://</span><span class="ellipsis">github.com/greshake/i3status-r</span><span class="invisible">ust/blob/v0.30.0/NEWS.md</span></a> for instructions on how to migrate. Users that don't want to migrate yet can set 'programs.i3status-rust.package' to an older version.<br /><a href="https://techhub.social/tags/NixOS" class="mention hashtag" rel="tag">#<span>NixOS</span></a> <a href="https://techhub.social/tags/Nix" class="mention hashtag" rel="tag">#<span>Nix</span></a> <a href="https://techhub.social/tags/HomeManager" class="mention hashtag" rel="tag">#<span>HomeManager</span></a></p>`,
 			news: `Module 'i3status-rust' was updated to support the new configuration format from 0.30.x releases, that introduces many breaking changes. The documentation was updated with examples from 0.30.x to help the transition. See https://github.com/greshake/i3status-rust/blob/v0.30.0/NEWS.md for instructions on how to migrate. Users that don't want to migrate yet can set 'programs.i3status-rust.package' to an older version.`,
-			want: true,
+		},
+		{
+			post: `<p>isync/mbsync 1.5.0 has changed several things. isync gained support for using $XDG_CONFIG_HOME, and now places its config file in &#39;$XDG_CONFIG_HOME/isyncrc&#39;. isync changed the configuration options SSLType and SSLVersion to TLSType and TLSVersion respectively. All instances of &#39;accounts.email.accounts.&lt;account-name&gt;.mbsync.extraConfig.account&#39; that use &#39;SSLType&#39; or &#39;SSLVersion&#39; should be replaced with &#39;TLSType&#39; or &#39;TLSVersion&#39;, respectively. TLSType options are unchanged. TLSVersions has a new syntax, requiring a change to the Nix syntax. Old Syntax: SSLVersions = [ &quot;TLSv1.3&quot; &quot;TLSv1.2&quot; ]; New Syntax: TLSVersions = [ &quot;+1.3&quot; &quot;+1.2&quot; &quot;-1.1&quot; ]; NOTE: The minus symbol means to NOT use that particular TLS version.<br /><a href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\">#<span>NixOS</span></a> <a href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\">#<span>Nix</span></a> <a href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\">#<span>HomeManager</span></a></p>`,
+			news: `isync/mbsync 1.5.0 has changed several things. isync gained support for using $XDG_CONFIG_HOME, and now places its config file in '$XDG_CONFIG_HOME/isyncrc'. isync changed the configuration options SSLType and SSLVersion to TLSType and TLSVersion respectively. All instances of 'accounts.email.accounts.<account-name>.mbsync.extraConfig.account' that use 'SSLType' or 'SSLVersion' should be replaced with 'TLSType' or 'TLSVersion', respectively. TLSType options are unchanged. TLSVersions has a new syntax, requiring a change to the Nix syntax. Old Syntax: SSLVersions = [ \"TLSv1.3\" \"TLSv1.2\" ]; New Syntax: TLSVersions = [ \"+1.3\" \"+1.2\" \"-1.1\" ]; NOTE: The minus symbol means to NOT use that particular TLS version.`,
 		},
 	}
-
 	for i, tc := range testCases {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			got := postIsNewsEntry(tc.post, tc.news)
-			assert.Equal(t, tc.want, got)
+			assert.True(t, strings.Contains(canonicalizePost(tc.post), canonicalizePost(tc.news)))
 		})
 	}
 }
