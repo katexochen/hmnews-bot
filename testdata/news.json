@@ -1200,6 +1200,12 @@
             "id": "cf6ca18e883b12e21ed75c6b234fe89b5fdd8f15909d2fbc68eae0faafeea654",
             "message": "A new option 'programs.starship.enableInteractive' is available for\nthe Fish shell that only enables starship if the shell is interactive.\n\nSome plugins require this to be set to 'false' to function correctly.\n",
             "time": "2024-12-04T20:00:00+00:00"
+        },
+        {
+            "condition": false,
+            "id": "374b6575d0972e213588c3309826698bb83925fe2a61c7f886247403c8f32be8",
+            "message": "isync/mbsync 1.5.0 has changed several things.\n\nisync gained support for using $XDG_CONFIG_HOME, and now places\nits config file in '$XDG_CONFIG_HOME/isyncrc'.\n\nisync changed the configuration options SSLType and SSLVersion to\nTLSType and TLSVersion respectively.\n\nAll instances of\n'accounts.email.accounts.<account-name>.mbsync.extraConfig.account'\nthat use 'SSLType' or 'SSLVersion' should be replaced with 'TLSType'\nor 'TLSVersion', respectively.\n\nTLSType options are unchanged.\n\nTLSVersions has a new syntax, requiring a change to the Nix syntax.\nOld Syntax: SSLVersions = [ \"TLSv1.3\" \"TLSv1.2\" ];\nNew Syntax: TLSVersions = [ \"+1.3\" \"+1.2\" \"-1.1\" ];\nNOTE: The minus symbol means to NOT use that particular TLS version.\n",
+            "time": "2024-12-08T17:22:13+00:00"
         }
     ]
 }
