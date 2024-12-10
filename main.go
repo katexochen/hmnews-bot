@@ -95,23 +95,28 @@ func findLastTootIdx(ctx context.Context, client *mastodon.Client, news []newsEn
 
 	for _, status := range statuses {
 		for i := len(news) - 1; i >= 0; i-- {
-			newsEntry := news[i].Message
-			content := html.UnescapeString(status.Content)
-			if postIsNewsEntry(content, newsEntry) {
-				log.Printf("Message of latest toot found at index %d with message %q", i, news[i].Message)
+			content := canonicalizePost(status.Content)
+			entry := canonicalizePost(news[i].Message)
+			if strings.Contains(content, entry) {
+				log.Printf("Message of latest toot found at index %d with message %q", i, content)
 				return i, nil
 			}
+			log.Printf("Message of toot at index %d does not match, toot raw: %q, to-post raw: %q", i, status.Content, news[i].Message)
 		}
 	}
 
 	return 0, errors.New("could not find last toot index")
 }
 
-func postIsNewsEntry(postContent, newsEntry string) bool {
-	p := bluemonday.StripTagsPolicy()
-	postContent = p.Sanitize(postContent)
-	postContent = html.UnescapeString(postContent)
-	return strings.Contains(postContent, newsEntry)
+func canonicalizePost(s string) string {
+	p := bluemonday.StrictPolicy()
+	s = html.UnescapeString(s)
+	if su, err := strconv.Unquote(`"` + s + `"`); err == nil {
+		s = su
+	}
+	s = p.Sanitize(s)
+	s = html.UnescapeString(s)
+	return s
 }
 
 func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []newsEntry, startIdx, maxPosts int) error {
