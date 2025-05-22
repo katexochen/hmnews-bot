@@ -19,6 +19,8 @@ import (
 
 const postWindow = 90 // days
 
+const dryRun = false
+
 func main() {
 	ctx := context.Background()
 
@@ -151,6 +153,9 @@ func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []ne
 			toot := &mastodon.Toot{
 				Status:      toot,
 				InReplyToID: lastStatusID,
+			}
+			if dryRun {
+				continue
 			}
 			status, err := client.PostStatus(ctx, toot)
 			if err != nil {
