@@ -80,11 +80,6 @@ func main() {
 		log.Fatalf("getting toots younger than %d days: %v", postWindow, err)
 	}
 	log.Printf("Found %d existing posts younger than %d days", len(existingPosts), postWindow)
-	j, err := json.MarshalIndent(existingPosts, "", "  ")
-	if err != nil {
-		log.Fatalf("marshalling existing posts: %v", err)
-	}
-	fmt.Println(string(j))
 
 	newToPost := filterNewsEntries(news, notYetPosted(existingPosts))
 	if len(newToPost) == 0 {
