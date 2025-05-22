@@ -88,7 +88,7 @@ func main() {
 	}
 	log.Printf("Found %d unposted news entries", len(newToPost))
 
-	if err := postNextNewsEntries(ctx, client, news, maxPosts); err != nil {
+	if err := postNextNewsEntries(ctx, client, newToPost, maxPosts); err != nil {
 		log.Fatalf("posting next news entries: %v", err)
 	}
 }
