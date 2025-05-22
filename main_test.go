@@ -7,6 +7,7 @@ import (
 	"strconv"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/mattn/go-mastodon"
 	"github.com/stretchr/testify/assert"
@@ -117,6 +118,36 @@ func TestNotYetPosted(t *testing.T) {
 	newsToPost := filterNewsEntries(news, notYetPosted(posts))
 	b, err := json.MarshalIndent(newsToPost, "", "  ")
 	require.NoError(err)
+	t.Log("news to be posted:")
 	fmt.Println(string(b))
+
+	// Find post that are not in news
+	postNotInNews := make([]struct {
+		Message string
+		Time    time.Time
+	}, 0)
+	for _, post := range posts {
+		found := false
+		for _, n := range newsToPost {
+			if post.Content == n.Message {
+				found = true
+				break
+			}
+		}
+		if !found {
+			postNotInNews = append(postNotInNews, struct {
+				Message string
+				Time    time.Time
+			}{
+				Message: post.Content,
+				Time:    post.CreatedAt,
+			})
+		}
+	}
+	b, err = json.MarshalIndent(postNotInNews, "", "  ")
+	require.NoError(err)
+	t.Log("posts not in news:")
+	fmt.Println(string(b))
+
 	assert.Len(newsToPost, 1)
 }
