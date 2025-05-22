@@ -249,10 +249,10 @@ func notYetPosted(posts []*mastodon.Status) func(newsEntry) bool {
 	return func(n newsEntry) bool {
 		for _, post := range posts {
 			if strings.Contains(canonicalizePost(post.Content), canonicalizePost(n.Message)) {
-				return true
+				return false
 			}
 		}
-		return false
+		return true
 	}
 }
 
