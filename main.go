@@ -54,10 +54,11 @@ func main() {
 		log.Fatalf("reading file at %q: %v", path, err)
 	}
 
-	news, err := parseNewsFile(f)
-	if err != nil {
-		log.Fatalf("parsing news file: %v", err)
+	var newsFile newsFile
+	if err := json.Unmarshal(f, &newsFile); err != nil {
+		log.Fatalf("unmarshalling news file: %v", err)
 	}
+	news := transformNewsEntries(newsFile.Entries, trimSpace)
 	log.Printf("Found %d news entries total", len(news))
 
 	client := mastodon.NewClient(&mastodon.Config{
@@ -205,14 +206,15 @@ type newsFile struct {
 
 var spaceRegexp = regexp.MustCompile(`\s+`)
 
-func parseNewsFile(f []byte) ([]newsEntry, error) {
-	nf := newsFile{}
-	if err := json.Unmarshal(f, &nf); err != nil {
-		return nil, fmt.Errorf("unmarshaling news file: %w", err)
+func trimSpace(n newsEntry) newsEntry {
+	m := strings.TrimSpace(n.Message)
+	n.Message = spaceRegexp.ReplaceAllString(m, " ")
+	return n
+}
+
+func transformNewsEntries(news []newsEntry, transform func(newsEntry) newsEntry) []newsEntry {
+	for i := range news {
+		news[i] = transform(news[i])
 	}
-	for i := range nf.Entries {
-		m := strings.TrimSpace(nf.Entries[i].Message)
-		nf.Entries[i].Message = spaceRegexp.ReplaceAllString(m, " ")
-	}
-	return nf.Entries, nil
+	return news
 }

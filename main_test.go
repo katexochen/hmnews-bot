@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"os"
 	"strconv"
@@ -89,7 +90,7 @@ func TestParseNewsFile(t *testing.T) {
 	f, err := os.ReadFile("testdata/news.json")
 	require.NoError(err)
 
-	news, err := parseNewsFile(f)
-	assert.NoError(err)
-	assert.Len(news, 233)
+	news := newsFile{}
+	assert.NoError(json.Unmarshal(f, &news))
+	assert.Len(news.Entries, 233)
 }
