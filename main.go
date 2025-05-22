@@ -58,7 +58,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("parsing news file: %v", err)
 	}
-	log.Printf("Found %d news entries", len(news))
+	log.Printf("Found %d news entries total", len(news))
 
 	client := mastodon.NewClient(&mastodon.Config{
 		Server:       mastodonServer,
@@ -177,8 +177,26 @@ func splitIntoToots(message string) []string {
 }
 
 type newsEntry struct {
-	Time    string `json:"time"`
-	Message string `json:"message"`
+	Time    time.Time `json:"time"`
+	Message string    `json:"message"`
+}
+
+func (n *newsEntry) UnmarshalJSON(data []byte) error {
+	aux := &struct {
+		Time    string `json:"time"`
+		Message string `json:"message"`
+	}{}
+	if err := json.Unmarshal(data, &aux); err != nil {
+		return err
+	}
+	parsedTime, err := time.Parse(time.RFC3339, aux.Time)
+	if err != nil {
+		log.Println("Error parsing time: %w", err)
+	} else {
+		n.Time = parsedTime
+	}
+	n.Message = aux.Message
+	return nil
 }
 
 type newsFile struct {
