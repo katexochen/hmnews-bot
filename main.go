@@ -3,12 +3,12 @@ package main
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"fmt"
 	"html"
 	"log"
 	"os"
 	"regexp"
+	"slices"
 	"strconv"
 	"strings"
 	"time"
@@ -16,6 +16,8 @@ import (
 	"github.com/mattn/go-mastodon"
 	"github.com/microcosm-cc/bluemonday"
 )
+
+const postWindow = 90 // days
 
 func main() {
 	ctx := context.Background()
@@ -61,6 +63,9 @@ func main() {
 	news := transformNewsEntries(newsFile.Entries, trimSpace)
 	log.Printf("Found %d news entries total", len(news))
 
+	news = filterNewsEntries(news, inTimeWindow)
+	log.Printf("Found %d news entries younger than %d days", len(news), postWindow)
+
 	client := mastodon.NewClient(&mastodon.Config{
 		Server:       mastodonServer,
 		ClientID:     mastodonClientID,
@@ -68,45 +73,53 @@ func main() {
 		AccessToken:  mastodonAccessToken,
 	})
 
-	latestIdx, err := findLastTootIdx(ctx, client, news)
+	existingPosts, err := getTootsInTimeWindow(ctx, client)
 	if err != nil {
-		log.Fatalf("finding last toot index: %v", err)
+		log.Fatalf("getting toots younger than %d days: %v", postWindow, err)
 	}
+	log.Printf("Found %d existing posts younger than %d days", len(existingPosts), postWindow)
 
-	if latestIdx == len(news)-1 {
-		log.Println("No new news entries to post")
+	newToPost := filterNewsEntries(news, notYetPosted(existingPosts))
+	if len(newToPost) == 0 {
+		log.Println("No unposted news entries found")
 		return
 	}
+	log.Printf("Found %d unposted news entries", len(newToPost))
 
-	if err := postNextNewsEntries(ctx, client, news, latestIdx+1, maxPosts); err != nil {
+	if err := postNextNewsEntries(ctx, client, news, maxPosts); err != nil {
 		log.Fatalf("posting next news entries: %v", err)
 	}
 }
 
-func findLastTootIdx(ctx context.Context, client *mastodon.Client, news []newsEntry) (int, error) {
+func getTootsInTimeWindow(ctx context.Context, client *mastodon.Client) ([]*mastodon.Status, error) {
+	var allStatuses []*mastodon.Status
+
 	acc, err := client.GetAccountCurrentUser(ctx)
 	if err != nil {
-		return 0, fmt.Errorf("getting current user: %w", err)
+		return nil, fmt.Errorf("getting current user: %w", err)
 	}
 
-	statuses, err := client.GetAccountStatuses(ctx, acc.ID, nil)
-	if err != nil {
-		return 0, fmt.Errorf("getting account statuses: %w", err)
-	}
-
-	for _, status := range statuses {
-		for i := len(news) - 1; i >= 0; i-- {
-			content := canonicalizePost(status.Content)
-			entry := canonicalizePost(news[i].Message)
-			if strings.Contains(content, entry) {
-				log.Printf("Message of latest toot found at index %d with message %q", i, content)
-				return i, nil
-			}
-			log.Printf("Message of toot at index %d does not match, toot raw: %q, to-post raw: %q", i, status.Content, news[i].Message)
+	var pg mastodon.Pagination
+	for {
+		statuses, err := client.GetAccountStatuses(ctx, acc.ID, &pg)
+		if err != nil {
+			return nil, fmt.Errorf("getting account statuses: %w", err)
 		}
+		if len(statuses) == 0 {
+			break
+		}
+
+		for _, status := range statuses {
+			if status.CreatedAt.Before(time.Now().AddDate(0, 0, -postWindow)) {
+				return allStatuses, nil
+			}
+			allStatuses = append(allStatuses, status)
+		}
+
+		pg.MaxID = statuses[len(statuses)-1].ID
 	}
 
-	return 0, errors.New("could not find last toot index")
+	return allStatuses, nil
 }
 
 func canonicalizePost(s string) string {
@@ -120,20 +133,24 @@ func canonicalizePost(s string) string {
 	return s
 }
 
-func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []newsEntry, startIdx, maxPosts int) error {
-	for i := startIdx; i < startIdx+maxPosts; i++ {
-		if i >= len(news) {
+func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []newsEntry, maxPosts int) error {
+	slices.SortFunc(news, func(a, b newsEntry) int {
+		return int(a.Time.UnixNano() - b.Time.UnixNano())
+	})
+
+	for i, newsEntry := range news {
+		if i >= maxPosts {
 			break
 		}
 
-		toots := splitIntoToots(news[i].Message)
+		toots := splitIntoToots(newsEntry.Message)
 
 		var lastStatusID mastodon.ID
 		for j, toot := range toots {
 			log.Printf("Posting news entry %d with message %q, part %d/%d", i, toot, j+1, len(toots))
-			toot := &mastodon.Toot{Status: toot}
-			if lastStatusID != "" {
-				toot.InReplyToID = lastStatusID
+			toot := &mastodon.Toot{
+				Status:      toot,
+				InReplyToID: lastStatusID,
 			}
 			status, err := client.PostStatus(ctx, toot)
 			if err != nil {
@@ -192,7 +209,7 @@ func (n *newsEntry) UnmarshalJSON(data []byte) error {
 	}
 	parsedTime, err := time.Parse(time.RFC3339, aux.Time)
 	if err != nil {
-		log.Println("Error parsing time: %w", err)
+		log.Println("Warn: parsing time: %w", err)
 	} else {
 		n.Time = parsedTime
 	}
@@ -217,4 +234,29 @@ func transformNewsEntries(news []newsEntry, transform func(newsEntry) newsEntry)
 		news[i] = transform(news[i])
 	}
 	return news
+}
+
+func inTimeWindow(n newsEntry) bool {
+	return n.Time.After(time.Now().AddDate(0, 0, -postWindow))
+}
+
+func notYetPosted(posts []*mastodon.Status) func(newsEntry) bool {
+	return func(n newsEntry) bool {
+		for _, post := range posts {
+			if strings.Contains(canonicalizePost(post.Content), canonicalizePost(n.Message)) {
+				return true
+			}
+		}
+		return false
+	}
+}
+
+func filterNewsEntries(news []newsEntry, filter func(newsEntry) bool) []newsEntry {
+	var filtered []newsEntry
+	for _, entry := range news {
+		if filter(entry) {
+			filtered = append(filtered, entry)
+		}
+	}
+	return filtered
 }
