@@ -8,6 +8,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/mattn/go-mastodon"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -93,4 +94,29 @@ func TestParseNewsFile(t *testing.T) {
 	news := newsFile{}
 	assert.NoError(json.Unmarshal(f, &news))
 	assert.Len(news.Entries, 233)
+}
+
+func TestNotYetPosted(t *testing.T) {
+	assert := assert.New(t)
+	require := require.New(t)
+
+	postsJson, err := os.ReadFile("testdata/posts.json")
+	require.NoError(err)
+	var posts []*mastodon.Status
+	assert.NoError(json.Unmarshal(postsJson, &posts))
+
+	newsJson, err := os.ReadFile("testdata/news.json")
+	require.NoError(err)
+	var newsFile newsFile
+	assert.NoError(json.Unmarshal(newsJson, &newsFile))
+	news := newsFile.Entries
+
+	news = transformNewsEntries(news, trimSpace)
+	news = filterNewsEntries(news, inTimeWindow)
+
+	newsToPost := filterNewsEntries(news, notYetPosted(posts))
+	b, err := json.MarshalIndent(newsToPost, "", "  ")
+	require.NoError(err)
+	fmt.Println(string(b))
+	assert.Len(newsToPost, 1)
 }
