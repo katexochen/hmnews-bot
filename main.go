@@ -115,24 +115,24 @@ func run(
 }
 
 func getToots(ctx context.Context, client *mastodon.Client) ([]*mastodon.Status, error) {
-	var allStatuses []*mastodon.Status
-
 	acc, err := client.GetAccountCurrentUser(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("getting current user: %w", err)
 	}
 
+	var allStatuses []*mastodon.Status
 	var pg mastodon.Pagination
 	for {
 		statuses, err := client.GetAccountStatuses(ctx, acc.ID, &pg)
 		if err != nil {
 			return nil, fmt.Errorf("getting account statuses: %w", err)
 		}
-		if len(statuses) == 0 {
+		log.Printf("Got %d statuses", len(statuses))
+		allStatuses = append(allStatuses, statuses...)
+		if pg.MaxID == "" || len(statuses) == 0 {
 			break
 		}
-		allStatuses = append(allStatuses, statuses...)
-		pg.MaxID = statuses[len(statuses)-1].ID
+		pg.MinID = ""
 	}
 
 	return allStatuses, nil
