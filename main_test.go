@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -8,9 +9,46 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/mattn/go-mastodon"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
+
+func TestRun(t *testing.T) {
+	assert := assert.New(t)
+	require := require.New(t)
+
+	ctx := context.Background()
+
+	f, err := os.ReadFile("testdata/news.json")
+	require.NoError(err)
+	newsFile := newsFile{}
+	require.NoError(json.Unmarshal(f, &newsFile))
+
+	f, err = os.ReadFile("testdata/mastodon.json")
+	require.NoError(err)
+	mastodonPosts := []*mastodon.Status{}
+	require.NoError(json.Unmarshal(f, &mastodonPosts))
+
+	client := &stubMastodonClient{}
+	assert.NoError(run(ctx, newsFile.Entries, mastodonPosts, client, 100))
+	assert.Len(client.posts, 9)
+
+	client = &stubMastodonClient{}
+	assert.NoError(run(ctx, newsFile.Entries, mastodonPosts, client, 2))
+	assert.Len(client.posts, 2)
+}
+
+type stubMastodonClient struct {
+	posts []*mastodon.Toot
+}
+
+func (s *stubMastodonClient) PostStatus(_ context.Context, status *mastodon.Toot) (*mastodon.Status, error) {
+	s.posts = append(s.posts, status)
+	return &mastodon.Status{
+		ID: "1234567890",
+	}, nil
+}
 
 func TestCanonicalizePost(t *testing.T) {
 	testCases := []struct {

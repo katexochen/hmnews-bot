@@ -1,0 +1,1942 @@
+[
+    {
+        "id": "114555109391133471",
+        "uri": "https://techhub.social/users/hmnews/statuses/114555109391133471",
+        "url": "https://techhub.social/@hmnews/114555109391133471",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;services.way-displays\u0026#39;. A service to automatically configure your displays on wlroots-based wayland compositors.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-23T03:50:50.232Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 1,
+        "favourites_count": 0,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114555109051673021",
+        "uri": "https://techhub.social/users/hmnews/statuses/114555109051673021",
+        "url": "https://techhub.social/@hmnews/114555109051673021",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new way to define news is available. Instead of editing the previous news.nix file, you can now define entries using individual files. This should reduce the number of merge conflicts.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-23T03:50:45.054Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 1,
+        "favourites_count": 0,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114554743844901274",
+        "uri": "https://techhub.social/users/hmnews/statuses/114554743844901274",
+        "url": "https://techhub.social/@hmnews/114554743844901274",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.rmpc\u0026#39;. RMPC (Remote MPD Client) is a minimalist TUI client for the Music Player Daemon. It provides a simple interface to control MPD with features like playlist manipulation, library browsing, and song searching. The module allows you to customize its behavior, keybindings, and connection settings.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-23T02:17:52.44Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 0,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114554743508367376",
+        "uri": "https://techhub.social/users/hmnews/statuses/114554743508367376",
+        "url": "https://techhub.social/@hmnews/114554743508367376",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.onedrive\u0026#39;. OneDrive is Microsoft\u0026#39;s cloud storage service. This module integrates the open source OneDrive client for Linux which provides synchronization capabilities between your local file system and OneDrive. The module allows configuring multiple OneDrive accounts, sync options, and notification preferences.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-23T02:17:47.304Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 0,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114553616752156769",
+        "uri": "https://techhub.social/users/hmnews/statuses/114553616752156769",
+        "url": "https://techhub.social/@hmnews/114553616752156769",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.nix-init\u0026#39;. nix-init generate Nix packages from URLs.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T21:31:14.369Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 3,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114553616417264888",
+        "uri": "https://techhub.social/users/hmnews/statuses/114553616417264888",
+        "url": "https://techhub.social/@hmnews/114553616417264888",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: `programs.sesh` Sesh is a CLI that helps you create and manage tmux sessions quickly and easily using zoxide.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T21:31:09.26Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114552959998962008",
+        "uri": "https://techhub.social/users/hmnews/statuses/114552959998962008",
+        "url": "https://techhub.social/@hmnews/114552959998962008",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: `services.mpdscribble` Adds a module for mpdscribble, a music player daemon scrobbler.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T18:44:13.111Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114552959665130217",
+        "uri": "https://techhub.social/users/hmnews/statuses/114552959665130217",
+        "url": "https://techhub.social/@hmnews/114552959665130217",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: `programs.ripgrep-all` Adds a module for ripgrep-all, a tool for searching text in files.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T18:44:08.016Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 2,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114552219128805576",
+        "uri": "https://techhub.social/users/hmnews/statuses/114552219128805576",
+        "url": "https://techhub.social/@hmnews/114552219128805576",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: `programs.mergiraf` Adds git integration for mergiraf to automatically resolve merge conflicts.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T15:35:48.328Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 1,
+        "reblogs_count": 2,
+        "favourites_count": 2,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114552218793877727",
+        "uri": "https://techhub.social/users/hmnews/statuses/114552218793877727",
+        "url": "https://techhub.social/@hmnews/114552218793877727",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;services.jankyborders\u0026#39;. JankyBorders adds customizable borders to macOS application windows. It provides features like adjustable border width, color, radius, and window title display. This module is particularly useful for improving window visibility when using a tiling window manager on macOS.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T15:35:43.22Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 0,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114551056021688846",
+        "uri": "https://techhub.social/users/hmnews/statuses/114551056021688846",
+        "url": "https://techhub.social/@hmnews/114551056021688846",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;services.skhd\u0026#39;. Simple Hotkey Daemon (skhd) is a simple macOS hotkey daemon that allows defining system-wide keyboard shortcuts for launching applications and shell commands. The module enables configuration of key combinations, modifiers, and associated actions, and integrates well with window managers like yabai.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T10:40:00.723Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114551055687813744",
+        "uri": "https://techhub.social/users/hmnews/statuses/114551055687813744",
+        "url": "https://techhub.social/@hmnews/114551055687813744",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.distrobox\u0026#39;. Distrobox is a tool that uses podman or docker to create containers using the Linux distribution of your choice. It allows you to use the package manager of other distributions to install applications that aren\u0026#39;t available in NixOS, and integrates those applications with your host system. The module enables configuration of container definitions and distrobox settings.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-22T10:39:55.629Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 1,
+        "favourites_count": 2,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114515476749540222",
+        "uri": "https://techhub.social/users/hmnews/statuses/114515476749540222",
+        "url": "https://techhub.social/@hmnews/114515476749540222",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: `programs.pgcli` pgcli is a Python CLI that lets you connect to Postgres databases and run queries with syntax highlighting and auto-completion.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-16T03:51:44.115Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114501993068620322",
+        "uri": "https://techhub.social/users/hmnews/statuses/114501993068620322",
+        "url": "https://techhub.social/@hmnews/114501993068620322",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: `programs.foliate` Foliate is a modern e-book reader tailored for GNOME.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-13T18:42:39.471Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114492833289466264",
+        "uri": "https://techhub.social/users/hmnews/statuses/114492833289466264",
+        "url": "https://techhub.social/@hmnews/114492833289466264",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.halloy\u0026#39;. Halloy is a modern IRC client supporting IRCv3 features, with a clean and intuitive user interface. It provides features like SASL authentication, message highlights, nick colors, emoji support, URL previews, and more.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-12T03:53:12.333Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114492466650478404",
+        "uri": "https://techhub.social/users/hmnews/statuses/114492466650478404",
+        "url": "https://techhub.social/@hmnews/114492466650478404",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.numbat\u0026#39;.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-12T02:19:57.867Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 1,
+        "reblogs_count": 0,
+        "favourites_count": 0,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114478604135644215",
+        "uri": "https://techhub.social/users/hmnews/statuses/114478604135644215",
+        "url": "https://techhub.social/@hmnews/114478604135644215",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.wayprompt\u0026#39;. Wayprompt is a password prompter for Wayland, including a drop-in replacement for GnuPG’s pinentry (\u0026#39;pinentry-wayprompt\u0026#39;). Note that the Wayland compositor must support the Layer Shell protocol.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-05-09T15:34:32.677Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 1,
+        "favourites_count": 5,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114411379531096085",
+        "uri": "https://techhub.social/users/hmnews/statuses/114411379531096085",
+        "url": "https://techhub.social/@hmnews/114411379531096085",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003e`services.espanso` now supports wayland. This is enabled by default on Linux as `services.espanso.waylandSupport = true;`. Depending on your graphical session type, you may disable one of `services.espanso.x11Support` and `services.espanso.waylandSupport` to reduce the closure size of espanso on your system. Both x11 and wayland versions come enabled by default on Linux.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-04-27T18:38:26.616Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 3,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114377423097333469",
+        "uri": "https://techhub.social/users/hmnews/statuses/114377423097333469",
+        "url": "https://techhub.social/@hmnews/114377423097333469",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: `programs.television` television is a cross-platform, fast and extensible general purpose fuzzy finder TUI.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-04-21T18:42:52.557Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    },
+    {
+        "id": "114373913594856934",
+        "uri": "https://techhub.social/users/hmnews/statuses/114373913594856934",
+        "url": "https://techhub.social/@hmnews/114373913594856934",
+        "account": {
+            "id": "109614668811881748",
+            "username": "hmnews",
+            "acct": "hmnews",
+            "display_name": "Home Manager News",
+            "locked": false,
+            "created_at": "2023-01-01T00:00:00Z",
+            "followers_count": 588,
+            "following_count": 3,
+            "statuses_count": 324,
+            "note": "\u003cp\u003eLatest home manager news.\u003c/p\u003e\u003cp\u003eUnofficial, operated by \u003cspan class=\"h-card\" translate=\"no\"\u003e\u003ca href=\"https://infosec.exchange/@katexochen\" class=\"u-url mention\"\u003e@\u003cspan\u003ekatexochen\u003c/span\u003e\u003c/a\u003e\u003c/span\u003e.\u003c/p\u003e\u003cp\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+            "url": "https://techhub.social/@hmnews",
+            "avatar": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "avatar_static": "https://files.techhub.social/accounts/avatars/109/614/668/811/881/748/original/806649b8f1d64662.png",
+            "header": "https://techhub.social/headers/original/missing.png",
+            "header_static": "https://techhub.social/headers/original/missing.png",
+            "emojis": [],
+            "moved": null,
+            "fields": [
+                {
+                    "name": "Contact",
+                    "value": "\u003ca href=\"https://infosec.exchange/@katexochen\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"\"\u003einfosec.exchange/@katexochen\u003c/span\u003e\u003cspan class=\"invisible\"\u003e\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                },
+                {
+                    "name": "Source",
+                    "value": "\u003ca href=\"https://github.com/katexochen/hmnews-bot\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/katexochen/hmnews-b\u003c/span\u003e\u003cspan class=\"invisible\"\u003eot\u003c/span\u003e\u003c/a\u003e",
+                    "verified_at": "0001-01-01T00:00:00Z"
+                }
+            ],
+            "bot": true,
+            "discoverable": true,
+            "source": null,
+            "followed_tags": null
+        },
+        "in_reply_to_id": null,
+        "in_reply_to_account_id": null,
+        "reblog": null,
+        "content": "\u003cp\u003eA new module is available: \u0026#39;programs.clock-rs\u0026#39;. clock-rs is a modern, digital clock that effortlessly runs in your terminal.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+        "created_at": "2025-04-21T03:50:21.799Z",
+        "edited_at": "0001-01-01T00:00:00Z",
+        "emojis": [],
+        "replies_count": 0,
+        "reblogs_count": 0,
+        "favourites_count": 1,
+        "reblogged": false,
+        "favourited": false,
+        "bookmarked": false,
+        "muted": false,
+        "sensitive": false,
+        "spoiler_text": "",
+        "visibility": "public",
+        "media_attachments": [],
+        "mentions": [],
+        "tags": [
+            {
+                "name": "nixos",
+                "url": "https://techhub.social/tags/nixos",
+                "history": null
+            },
+            {
+                "name": "nix",
+                "url": "https://techhub.social/tags/nix",
+                "history": null
+            },
+            {
+                "name": "homemanager",
+                "url": "https://techhub.social/tags/homemanager",
+                "history": null
+            }
+        ],
+        "card": null,
+        "poll": null,
+        "application": {
+            "id": "",
+            "redirect_uri": "",
+            "client_id": "",
+            "client_secret": ""
+        },
+        "language": "en",
+        "pinned": false,
+        "params": {
+            "application_id": "",
+            "idempotency": "",
+            "in_reply_to_id": null,
+            "media_ids": null,
+            "poll": null,
+            "sensitive": false,
+            "spoiler_text": "",
+            "text": "",
+            "visibility": ""
+        }
+    }
+]
