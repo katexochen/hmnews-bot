@@ -19,7 +19,7 @@ import (
 
 const postWindow = 90 // days
 
-const dryRun = false
+const dryRun = true
 
 func main() {
 	ctx := context.Background()
