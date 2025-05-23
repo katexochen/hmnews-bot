@@ -57,16 +57,10 @@ func main() {
 	if err != nil {
 		log.Fatalf("reading file at %q: %v", path, err)
 	}
-
 	var newsFile newsFile
 	if err := json.Unmarshal(f, &newsFile); err != nil {
 		log.Fatalf("unmarshalling news file: %v", err)
 	}
-	news := transformNewsEntries(newsFile.Entries, trimSpace)
-	log.Printf("Found %d news entries total", len(news))
-
-	news = filterNewsEntries(news, inTimeWindow)
-	log.Printf("Found %d news entries younger than %d days", len(news), postWindow)
 
 	client := mastodon.NewClient(&mastodon.Config{
 		Server:       mastodonServer,
@@ -74,26 +68,53 @@ func main() {
 		ClientSecret: mastodonClientSecret,
 		AccessToken:  mastodonAccessToken,
 	})
-
-	existingPosts, err := getTootsInTimeWindow(ctx, client)
+	mastodonPosts, err := getToots(ctx, client)
 	if err != nil {
-		log.Fatalf("getting toots younger than %d days: %v", postWindow, err)
+		log.Fatalf("getting toots: %v", err)
 	}
-	log.Printf("Found %d existing posts younger than %d days", len(existingPosts), postWindow)
-
-	newToPost := filterNewsEntries(news, notYetPosted(existingPosts))
-	if len(newToPost) == 0 {
-		log.Println("No unposted news entries found")
-		return
+	mastodonPostsFile, err := os.OpenFile("mastodon.json", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0o644)
+	if err != nil {
+		log.Fatalf("opening mastodon.json: %v", err)
 	}
-	log.Printf("Found %d unposted news entries", len(newToPost))
+	defer mastodonPostsFile.Close()
+	if err := json.NewEncoder(mastodonPostsFile).Encode(mastodonPosts); err != nil {
+		log.Fatalf("encoding mastodon posts: %v", err)
+	}
 
-	if err := postNextNewsEntries(ctx, client, newToPost, maxPosts); err != nil {
-		log.Fatalf("posting next news entries: %v", err)
+	if err := run(ctx, newsFile.Entries, mastodonPosts, client, maxPosts); err != nil {
+		log.Fatalf(err.Error())
 	}
 }
 
-func getTootsInTimeWindow(ctx context.Context, client *mastodon.Client) ([]*mastodon.Status, error) {
+func run(
+	ctx context.Context,
+	news []newsEntry,
+	mastodonPosts []*mastodon.Status,
+	mastodonClient mastodonClient,
+	maxPosts int,
+) error {
+	news = transformNewsEntries(news, trimSpace)
+	log.Printf("Found %d news entries total", len(news))
+
+	news = filterNewsEntries(news, inTimeWindow)
+	log.Printf("Found %d news entries younger than %d days", len(news), postWindow)
+
+	log.Printf("Found %d existing posts younger than %d days", len(mastodonPosts), postWindow)
+
+	newToPost := filterNewsEntries(news, notYetPosted(mastodonPosts))
+	if len(newToPost) == 0 {
+		log.Println("No unposted news entries found")
+		return nil
+	}
+	log.Printf("Found %d unposted news entries", len(newToPost))
+
+	if err := postNextNewsEntries(ctx, mastodonClient, newToPost, maxPosts); err != nil {
+		log.Fatalf("posting next news entries: %v", err)
+	}
+	return nil
+}
+
+func getToots(ctx context.Context, client *mastodon.Client) ([]*mastodon.Status, error) {
 	var allStatuses []*mastodon.Status
 
 	acc, err := client.GetAccountCurrentUser(ctx)
@@ -110,14 +131,7 @@ func getTootsInTimeWindow(ctx context.Context, client *mastodon.Client) ([]*mast
 		if len(statuses) == 0 {
 			break
 		}
-
-		for _, status := range statuses {
-			if status.CreatedAt.Before(time.Now().AddDate(0, 0, -postWindow)) {
-				return allStatuses, nil
-			}
-			allStatuses = append(allStatuses, status)
-		}
-
+		allStatuses = append(allStatuses, statuses...)
 		pg.MaxID = statuses[len(statuses)-1].ID
 	}
 
@@ -135,7 +149,11 @@ func canonicalizePost(s string) string {
 	return s
 }
 
-func postNextNewsEntries(ctx context.Context, client *mastodon.Client, news []newsEntry, maxPosts int) error {
+type mastodonClient interface {
+	PostStatus(ctx context.Context, status *mastodon.Toot) (*mastodon.Status, error)
+}
+
+func postNextNewsEntries(ctx context.Context, client mastodonClient, news []newsEntry, maxPosts int) error {
 	slices.SortFunc(news, func(a, b newsEntry) int {
 		return int(a.Time.UnixNano() - b.Time.UnixNano())
 	})
