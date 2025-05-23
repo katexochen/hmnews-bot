@@ -27,7 +27,9 @@ jobs:
         run: nix flake update
 
       - name: Build news
-        run: nix build .#homeConfigurations.a.config.news.json.output
+        run: |
+          nix build .#homeConfigurations.a.config.news.json.output
+          cp result news.json
 
       - name: Run
         env:
@@ -38,3 +40,11 @@ jobs:
           HMNB_MASTODON_CLIENT_SECRET: ${{ secrets.HMNB_MASTODON_CLIENT_SECRET }}
           HMNB_MASTODON_ACCESS_TOKEN: ${{ secrets.HMNB_MASTODON_ACCESS_TOKEN }}
         run: ./hmnb
+
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            news.json
+            mastodon.json
