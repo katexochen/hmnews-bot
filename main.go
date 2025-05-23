@@ -99,7 +99,7 @@ func run(
 	news = filterNewsEntries(news, inTimeWindow)
 	log.Printf("Found %d news entries younger than %d days", len(news), postWindow)
 
-	log.Printf("Found %d existing posts younger than %d days", len(mastodonPosts), postWindow)
+	log.Printf("Found %d mastodon posts total", len(mastodonPosts))
 
 	newToPost := filterNewsEntries(news, notYetPosted(mastodonPosts))
 	if len(newToPost) == 0 {
