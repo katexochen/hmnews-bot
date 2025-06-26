@@ -39,6 +39,8 @@ jobs:
           HMNB_MASTODON_CLIENT_ID: ${{ secrets.HMNB_MASTODON_CLIENT_ID }}
           HMNB_MASTODON_CLIENT_SECRET: ${{ secrets.HMNB_MASTODON_CLIENT_SECRET }}
           HMNB_MASTODON_ACCESS_TOKEN: ${{ secrets.HMNB_MASTODON_ACCESS_TOKEN }}
+          HMNB_BLUESKY_HANDLE: hmnews.bsky.social
+          HMNB_BLUESKY_APP_PASSWORD: ${{ secrets.HMNB_BLUESKY_APP_PASSWORD }}
         run: ./hmnb
 
       - name: Upload
@@ -48,3 +50,4 @@ jobs:
           path: |
             news.json
             mastodon.json
+            bluesky.json

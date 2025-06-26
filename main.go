@@ -21,6 +21,7 @@ const (
 	postWindow = 90 // days
 	dryRun     = false
 	hashTags   = "\n#NixOS #Nix #HomeManager"
+	nbfBluesky = 1750970747 - (30 * 24 * 60 * 60) // 30 days before introduction
 )
 
 func main() {
@@ -54,6 +55,14 @@ func main() {
 	if mastodonAccessToken == "" {
 		log.Fatal("HMNB_MASTODON_ACCESS_TOKEN not set")
 	}
+	blueskyHandle := os.Getenv("HMNB_BLUESKY_HANDLE")
+	if blueskyHandle == "" {
+		log.Fatal("HMNB_BLUESKY_HANDLE not set")
+	}
+	blueskyAppPassword := os.Getenv("HMNB_BLUESKY_APP_PASSWORD")
+	if blueskyAppPassword == "" {
+		log.Fatal("HMNB_BLUESKY_APP_PASSWORD not set")
+	}
 
 	f, err := os.ReadFile(path)
 	if err != nil {
@@ -61,10 +70,10 @@ func main() {
 	}
 	var newsFile newsFile
 	if err := json.Unmarshal(f, &newsFile); err != nil {
-		log.Fatalf("unmarshalling news file: %v", err)
+		log.Fatalf("unmarshaling news file: %v", err)
 	}
 
-	client := newMastodonClient(&mastodon.Config{
+	mastodonC := newMastodonClient(&mastodon.Config{
 		Server:       mastodonServer,
 		ClientID:     mastodonClientID,
 		ClientSecret: mastodonClientSecret,
@@ -78,7 +87,22 @@ func main() {
 		},
 	})
 
-	if err := run(ctx, newsFile.Entries, []postingClient{client}); err != nil {
+	bluesskyC, err := newBlueskyClient(ctx, blueskyClientConfig{
+		handle:     blueskyHandle,
+		appkey:     blueskyAppPassword,
+		dryRun:     dryRun,
+		maxPosts:   maxPosts,
+		maxPostLen: 300,
+		newsFilter: []func(newsEntry) bool{
+			inTimeWindow,
+			func(n newsEntry) bool { return n.Time.Unix() >= nbfBluesky },
+		},
+	})
+	if err != nil {
+		log.Fatalf("creating Bluesky client: %v", err)
+	}
+
+	if err := run(ctx, newsFile.Entries, []postingClient{mastodonC, bluesskyC}); err != nil {
 		log.Fatal(err.Error())
 	}
 }
