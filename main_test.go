@@ -30,25 +30,34 @@ func TestRun(t *testing.T) {
 	mastodonPosts := []*mastodon.Status{}
 	require.NoError(json.Unmarshal(f, &mastodonPosts))
 
-	client := &stubMastodonClient{}
-	assert.NoError(run(ctx, newsFile.Entries, mastodonPosts, client, 100))
-	assert.Len(client.posts, 9)
-
-	client = &stubMastodonClient{}
-	assert.NoError(run(ctx, newsFile.Entries, mastodonPosts, client, 2))
-	assert.Len(client.posts, 2)
+	client := stubPostingClientFromMastodonPosts(mastodonPosts)
+	assert.NoError(run(ctx, newsFile.Entries, []postingClient{client}))
+	assert.Len(client.posts, len(mastodonPosts)+2)
 }
 
-type stubMastodonClient struct {
-	posts []*mastodon.Toot
+type stubPostingClient struct {
+	posts []post
 }
 
-func (s *stubMastodonClient) PostStatus(_ context.Context, status *mastodon.Toot) (*mastodon.Status, error) {
-	s.posts = append(s.posts, status)
-	return &mastodon.Status{
-		ID: "1234567890",
-	}, nil
+func stubPostingClientFromMastodonPosts(posts []*mastodon.Status) *stubPostingClient {
+	stubClient := &stubPostingClient{}
+	for _, post := range posts {
+		stubClient.posts = append(stubClient.posts, &mastodonPost{post})
+	}
+	return stubClient
 }
+
+func (c *stubPostingClient) CreatePostChain(_ context.Context, postChain []string) error {
+	for _, post := range postChain {
+		c.posts = append(c.posts, &mastodonPost{&mastodon.Status{Content: post}})
+	}
+	return nil
+}
+
+func (c *stubPostingClient) ListPosts(context.Context) ([]post, error) { return c.posts, nil }
+func (c *stubPostingClient) NewsFilter() []func(newsEntry) bool        { return nil }
+func (c *stubPostingClient) PlatformName() string                      { return "Stub" }
+func (c *stubPostingClient) MaxPosts() int                             { return 2 }
 
 func TestCanonicalizePost(t *testing.T) {
 	testCases := []struct {

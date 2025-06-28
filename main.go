@@ -17,9 +17,11 @@ import (
 	"github.com/microcosm-cc/bluemonday"
 )
 
-const postWindow = 90 // days
-
-const dryRun = false
+const (
+	postWindow = 90 // days
+	dryRun     = false
+	hashTags   = "\n#NixOS #Nix #HomeManager"
+)
 
 func main() {
 	ctx := context.Background()
@@ -62,13 +64,19 @@ func main() {
 		log.Fatalf("unmarshalling news file: %v", err)
 	}
 
-	client := mastodon.NewClient(&mastodon.Config{
+	client := newMastodonClient(&mastodon.Config{
 		Server:       mastodonServer,
 		ClientID:     mastodonClientID,
 		ClientSecret: mastodonClientSecret,
 		AccessToken:  mastodonAccessToken,
+	}, mastodonClientConfig{
+		dryRun:   dryRun,
+		maxPosts: maxPosts,
+		newsFilter: []func(newsEntry) bool{
+			inTimeWindow,
+		},
 	})
-	mastodonPosts, err := getToots(ctx, client)
+	mastodonPosts, err := client.ListPosts(ctx)
 	if err != nil {
 		log.Fatalf("getting toots: %v", err)
 	}
@@ -81,17 +89,27 @@ func main() {
 		log.Fatalf("encoding mastodon posts: %v", err)
 	}
 
-	if err := run(ctx, newsFile.Entries, mastodonPosts, client, maxPosts); err != nil {
+	if err := run(ctx, newsFile.Entries, []postingClient{client}); err != nil {
 		log.Fatal(err.Error())
 	}
+}
+
+type post interface {
+	Text() string
+}
+
+type postingClient interface {
+	NewsFilter() []func(newsEntry) bool
+	ListPosts(ctx context.Context) ([]post, error)
+	CreatePostChain(ctx context.Context, postChain []string) error
+	PlatformName() string
+	MaxPosts() int
 }
 
 func run(
 	ctx context.Context,
 	news []newsEntry,
-	mastodonPosts []*mastodon.Status,
-	mastodonClient mastodonClient,
-	maxPosts int,
+	clients []postingClient,
 ) error {
 	news = transformNewsEntries(news, trimSpace)
 	log.Printf("Found %d news entries total", len(news))
@@ -99,43 +117,32 @@ func run(
 	news = filterNewsEntries(news, inTimeWindow)
 	log.Printf("Found %d news entries younger than %d days", len(news), postWindow)
 
-	log.Printf("Found %d mastodon posts total", len(mastodonPosts))
+	for _, c := range clients {
+		log.Printf("Running %s client", c.PlatformName())
 
-	newToPost := filterNewsEntries(news, notYetPosted(mastodonPosts))
-	if len(newToPost) == 0 {
-		log.Println("No unposted news entries found")
-		return nil
-	}
-	log.Printf("Found %d unposted news entries", len(newToPost))
+		newsForClient := copySlice(news)
+		for _, filter := range c.NewsFilter() {
+			newsForClient = filterNewsEntries(newsForClient, filter)
+		}
 
-	if err := postNextNewsEntries(ctx, mastodonClient, newToPost, maxPosts); err != nil {
-		return fmt.Errorf("posting next news entries: %w", err)
+		posts, err := c.ListPosts(ctx)
+		if err != nil {
+			return fmt.Errorf("listing posts: %w", err)
+		}
+		log.Printf("Found %d %s posts total", len(posts), c.PlatformName())
+
+		newsToPost := filterNewsEntries(newsForClient, notYetPosted(posts))
+		if len(newsToPost) == 0 {
+			log.Println("No unposted news entries found")
+			continue
+		}
+		log.Printf("Found %d unposted news entries", len(newsToPost))
+
+		if err := postNextNewsEntries(ctx, c, newsToPost); err != nil {
+			return fmt.Errorf("posting next news entries: %w", err)
+		}
 	}
 	return nil
-}
-
-func getToots(ctx context.Context, client *mastodon.Client) ([]*mastodon.Status, error) {
-	acc, err := client.GetAccountCurrentUser(ctx)
-	if err != nil {
-		return nil, fmt.Errorf("getting current user: %w", err)
-	}
-
-	var allStatuses []*mastodon.Status
-	var pg mastodon.Pagination
-	for {
-		statuses, err := client.GetAccountStatuses(ctx, acc.ID, &pg)
-		if err != nil {
-			return nil, fmt.Errorf("getting account statuses: %w", err)
-		}
-		log.Printf("Got %d statuses", len(statuses))
-		allStatuses = append(allStatuses, statuses...)
-		if pg.MaxID == "" || len(statuses) == 0 {
-			break
-		}
-		pg.MinID = ""
-	}
-
-	return allStatuses, nil
 }
 
 func canonicalizePost(s string) string {
@@ -149,45 +156,30 @@ func canonicalizePost(s string) string {
 	return s
 }
 
-type mastodonClient interface {
-	PostStatus(ctx context.Context, status *mastodon.Toot) (*mastodon.Status, error)
-}
-
-func postNextNewsEntries(ctx context.Context, client mastodonClient, news []newsEntry, maxPosts int) error {
+func postNextNewsEntries(ctx context.Context, client postingClient, news []newsEntry) error {
 	slices.SortFunc(news, func(a, b newsEntry) int {
 		return int(a.Time.UnixNano() - b.Time.UnixNano())
 	})
 
 	for i, newsEntry := range news {
-		if i >= maxPosts {
+		if i >= client.MaxPosts() {
 			break
 		}
 
 		toots := splitIntoToots(newsEntry.Message)
 
-		var lastStatusID mastodon.ID
+		log.Printf("Posting news entry %d with %d parts", i, len(toots))
 		for j, toot := range toots {
-			log.Printf("Posting news entry %d with message %q, part %d/%d", i, toot, j+1, len(toots))
-			toot := &mastodon.Toot{
-				Status:      toot,
-				InReplyToID: lastStatusID,
-			}
-			if dryRun {
-				continue
-			}
-			status, err := client.PostStatus(ctx, toot)
-			if err != nil {
-				return fmt.Errorf("posting status: %w", err)
-			}
-			lastStatusID = status.ID
-			time.Sleep(5 * time.Second)
+			log.Printf("  %d/%d: %s", j+1, len(toots), toot)
+		}
+
+		if err := client.CreatePostChain(ctx, toots); err != nil {
+			return fmt.Errorf("posting news entry %d: %w", i, err)
 		}
 	}
 
 	return nil
 }
-
-const hashTags = "\n#NixOS #Nix #HomeManager"
 
 func splitIntoToots(message string) []string {
 	if message == "" {
@@ -263,10 +255,10 @@ func inTimeWindow(n newsEntry) bool {
 	return n.Time.After(time.Now().AddDate(0, 0, -postWindow))
 }
 
-func notYetPosted(posts []*mastodon.Status) func(newsEntry) bool {
+func notYetPosted(posts []post) func(newsEntry) bool {
 	return func(n newsEntry) bool {
 		for _, post := range posts {
-			if strings.Contains(canonicalizePost(post.Content), canonicalizePost(n.Message)) {
+			if strings.Contains(canonicalizePost(post.Text()), canonicalizePost(n.Message)) {
 				return false
 			}
 		}
@@ -282,4 +274,13 @@ func filterNewsEntries(news []newsEntry, filter func(newsEntry) bool) []newsEntr
 		}
 	}
 	return filtered
+}
+
+func copySlice[T any](s []T) []T {
+	if s == nil {
+		return nil
+	}
+	copied := make([]T, len(s))
+	copy(copied, s)
+	return copied
 }
