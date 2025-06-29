@@ -20,6 +20,10 @@ func TestRun(t *testing.T) {
 
 	ctx := context.Background()
 
+	t.Cleanup(func() {
+		assert.NoError(os.Remove("stub.json"))
+	})
+
 	f, err := os.ReadFile("testdata/news.json")
 	require.NoError(err)
 	newsFile := newsFile{}
@@ -33,6 +37,7 @@ func TestRun(t *testing.T) {
 	client := stubPostingClientFromMastodonPosts(mastodonPosts)
 	assert.NoError(run(ctx, newsFile.Entries, []postingClient{client}))
 	assert.Len(client.posts, len(mastodonPosts)+2)
+	assert.FileExists("stub.json", "stub.json with posts should be created")
 }
 
 type stubPostingClient struct {
@@ -56,7 +61,7 @@ func (c *stubPostingClient) CreatePostChain(_ context.Context, postChain []strin
 
 func (c *stubPostingClient) ListPosts(context.Context) ([]post, error) { return c.posts, nil }
 func (c *stubPostingClient) NewsFilter() []func(newsEntry) bool        { return nil }
-func (c *stubPostingClient) PlatformName() string                      { return "Stub" }
+func (c *stubPostingClient) PlatformName() string                      { return "stub" }
 func (c *stubPostingClient) MaxPosts() int                             { return 2 }
 
 func TestCanonicalizePost(t *testing.T) {

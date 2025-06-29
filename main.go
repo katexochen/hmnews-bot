@@ -76,18 +76,6 @@ func main() {
 			inTimeWindow,
 		},
 	})
-	mastodonPosts, err := client.ListPosts(ctx)
-	if err != nil {
-		log.Fatalf("getting toots: %v", err)
-	}
-	mastodonPostsFile, err := os.OpenFile("mastodon.json", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0o644)
-	if err != nil {
-		log.Fatalf("opening mastodon.json: %v", err)
-	}
-	defer mastodonPostsFile.Close()
-	if err := json.NewEncoder(mastodonPostsFile).Encode(mastodonPosts); err != nil {
-		log.Fatalf("encoding mastodon posts: %v", err)
-	}
 
 	if err := run(ctx, newsFile.Entries, []postingClient{client}); err != nil {
 		log.Fatal(err.Error())
@@ -130,6 +118,20 @@ func run(
 			return fmt.Errorf("listing posts: %w", err)
 		}
 		log.Printf("Found %d %s posts total", len(posts), c.PlatformName())
+
+		postFile, err := os.OpenFile(
+			fmt.Sprintf("%s.json", c.PlatformName()),
+			os.O_RDWR|os.O_CREATE|os.O_TRUNC,
+			0o644,
+		)
+		if err != nil {
+			return fmt.Errorf("opening %s.json: %w", c.PlatformName(), err)
+		}
+		defer postFile.Close()
+		if err := json.NewEncoder(postFile).Encode(posts); err != nil {
+			return fmt.Errorf("encoding posts: %w", err)
+		}
+		log.Printf("Wrote posts file to %s.json", c.PlatformName())
 
 		newsToPost := filterNewsEntries(newsForClient, notYetPosted(posts))
 		if len(newsToPost) == 0 {

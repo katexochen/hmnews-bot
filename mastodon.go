@@ -78,7 +78,7 @@ func (c *mastodonClient) NewsFilter() []func(newsEntry) bool {
 }
 
 func (c *mastodonClient) PlatformName() string {
-	return "Mastodon"
+	return "mastodon"
 }
 
 func (c *mastodonClient) MaxPosts() int {
