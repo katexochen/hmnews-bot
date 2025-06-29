@@ -109,7 +109,10 @@ func (c *blueskyClient) CreatePostChain(ctx context.Context, postChain []string)
 			Text:      post,
 			CreatedAt: time.Now().UTC().Format(time.RFC3339),
 			Langs:     []string{"en"},
-			Facets:    hashtagFacetsFromString(post),
+			Facets: append(
+				hashtagFacetsFromString(post),
+				linkFacetsFromString(post)...,
+			),
 		}
 
 		if i > 0 {
@@ -208,5 +211,30 @@ func hashtagFacetsFromString(s string) []*bsky.RichtextFacet {
 			facets = append(facets, newFacet(s, start, i+1))
 		}
 	}
+	return facets
+}
+
+func linkFacetsFromString(s string) []*bsky.RichtextFacet {
+	facets := []*bsky.RichtextFacet{}
+
+	for _, w := range strings.Fields(s) {
+		if !strings.HasPrefix(w, "https://") {
+			continue
+		}
+		facets = append(facets, &bsky.RichtextFacet{
+			Index: &bsky.RichtextFacet_ByteSlice{
+				ByteStart: int64(strings.Index(s, w)),
+				ByteEnd:   int64(strings.Index(s, w) + len(w)),
+			},
+			Features: []*bsky.RichtextFacet_Features_Elem{
+				{
+					RichtextFacet_Link: &bsky.RichtextFacet_Link{
+						Uri: w,
+					},
+				},
+			},
+		})
+	}
+
 	return facets
 }
