@@ -70,8 +70,9 @@ func main() {
 		ClientSecret: mastodonClientSecret,
 		AccessToken:  mastodonAccessToken,
 	}, mastodonClientConfig{
-		dryRun:   dryRun,
-		maxPosts: maxPosts,
+		dryRun:     dryRun,
+		maxPosts:   maxPosts,
+		maxPostLen: 1000,
 		newsFilter: []func(newsEntry) bool{
 			inTimeWindow,
 		},
@@ -92,6 +93,7 @@ type postingClient interface {
 	CreatePostChain(ctx context.Context, postChain []string) error
 	PlatformName() string
 	MaxPosts() int
+	MaxPostLen() int
 }
 
 func run(
@@ -168,14 +170,14 @@ func postNextNewsEntries(ctx context.Context, client postingClient, news []newsE
 			break
 		}
 
-		toots := splitIntoToots(newsEntry.Message)
+		posts := splitIntoPosts(newsEntry.Message, client.MaxPostLen())
 
-		log.Printf("Posting news entry %d with %d parts", i, len(toots))
-		for j, toot := range toots {
-			log.Printf("  %d/%d: %s", j+1, len(toots), toot)
+		log.Printf("Posting news entry %d with %d parts", i, len(posts))
+		for j, post := range posts {
+			log.Printf("  %d/%d: %s", j+1, len(posts), post)
 		}
 
-		if err := client.CreatePostChain(ctx, toots); err != nil {
+		if err := client.CreatePostChain(ctx, posts); err != nil {
 			return fmt.Errorf("posting news entry %d: %w", i, err)
 		}
 	}
@@ -183,32 +185,37 @@ func postNextNewsEntries(ctx context.Context, client postingClient, news []newsE
 	return nil
 }
 
-func splitIntoToots(message string) []string {
+func splitIntoPosts(message string, maxPostLen int) []string {
 	if message == "" {
 		return nil
 	}
 
-	if len(message)+len(hashTags) <= 1000 {
+	if len(message)+len(hashTags) <= maxPostLen {
 		return []string{message + hashTags}
 	}
 
-	var toots []string
-	var toot string
+	var posts []string
+	var post string
 	for _, word := range strings.Split(message, " ") {
-		if len(toot)+len(word) > 950 {
-			toots = append(toots, toot)
-			toot = ""
+		var lenHashtags int
+		if len(posts) == 0 {
+			// First post get hash tags, so additional space needed.
+			lenHashtags = len(hashTags)
 		}
-		toot += word + " "
+		if len(post)+len(word)+1 > (maxPostLen - lenHashtags - 5) { // 5 for "[n/n]", 1 for space
+			posts = append(posts, post)
+			post = ""
+		}
+		post += word + " "
 	}
-	toots = append(toots, toot)
+	posts = append(posts, post)
 
-	for i := range toots {
-		toots[i] = fmt.Sprintf("%s [%d/%d]", toots[i], i+1, len(toots))
+	for i := range posts {
+		posts[i] = fmt.Sprintf("%s[%d/%d]", posts[i], i+1, len(posts))
 	}
-	toots[len(toots)-1] = toots[len(toots)-1] + hashTags
+	posts[0] = posts[0] + hashTags
 
-	return toots
+	return posts
 }
 
 type newsEntry struct {

@@ -16,6 +16,7 @@ type mastodonClient struct {
 type mastodonClientConfig struct {
 	dryRun     bool
 	maxPosts   int
+	maxPostLen int
 	newsFilter []func(newsEntry) bool
 }
 
@@ -83,6 +84,10 @@ func (c *mastodonClient) PlatformName() string {
 
 func (c *mastodonClient) MaxPosts() int {
 	return c.maxPosts
+}
+
+func (c *mastodonClient) MaxPostLen() int {
+	return c.maxPostLen
 }
 
 type mastodonPost struct {
