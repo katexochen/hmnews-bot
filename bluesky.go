@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strings"
 	"time"
+	"unicode"
 
 	"github.com/bluesky-social/indigo/api/atproto"
 	"github.com/bluesky-social/indigo/api/bsky"
@@ -108,6 +109,7 @@ func (c *blueskyClient) CreatePostChain(ctx context.Context, postChain []string)
 			Text:      post,
 			CreatedAt: time.Now().UTC().Format(time.RFC3339),
 			Langs:     []string{"en"},
+			Facets:    hashtagFacetsFromString(post),
 		}
 
 		if i > 0 {
@@ -133,11 +135,9 @@ func (c *blueskyClient) CreatePostChain(ctx context.Context, postChain []string)
 			return fmt.Errorf("failed to create post %d: %w", i, err)
 		}
 
-		parentURI = out.Uri
-		parentCID = out.Cid
+		parentURI, parentCID = out.Uri, out.Cid
 		if i == 0 {
-			rootURI = out.Uri
-			rootCID = out.Cid
+			rootURI, rootCID = out.Uri, out.Cid
 		}
 		time.Sleep(2 * time.Second)
 	}
@@ -170,4 +170,43 @@ func (p *blueskyPost) Text() string {
 		return ""
 	}
 	return p.FeedPost.Text
+}
+
+func hashtagFacetsFromString(s string) []*bsky.RichtextFacet {
+	newFacet := func(s string, start, end int) *bsky.RichtextFacet {
+		return &bsky.RichtextFacet{
+			Index: &bsky.RichtextFacet_ByteSlice{
+				ByteStart: int64(start),
+				ByteEnd:   int64(end),
+			},
+			Features: []*bsky.RichtextFacet_Features_Elem{
+				{
+					RichtextFacet_Tag: &bsky.RichtextFacet_Tag{
+						Tag: s[start+1 : end],
+					},
+				},
+			},
+		}
+	}
+
+	var facets []*bsky.RichtextFacet
+	start := -1
+	for i, r := range s {
+		switch {
+		case r == '#':
+			start = i
+		case unicode.IsSpace(r):
+			if start < 0 {
+				continue
+			}
+			if i-start <= 1 { // At least one character after #
+				start = -1
+				continue
+			}
+			facets = append(facets, newFacet(s, start, i))
+		case i == len(s)-1 && start != -1: // End of string
+			facets = append(facets, newFacet(s, start, i+1))
+		}
+	}
+	return facets
 }
