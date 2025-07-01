@@ -20,7 +20,6 @@ import (
 const (
 	postWindow = 90 // days
 	hashTags   = "\n#NixOS #Nix #HomeManager"
-	nbfBluesky = 1750970747 - (30 * 24 * 60 * 60) // 30 days before introduction
 )
 
 func main() {
@@ -98,8 +97,7 @@ func main() {
 		dryRun:   dryRun,
 		maxPosts: maxPosts,
 		newsFilter: map[string]func(newsEntry) bool{
-			"not older than 90d":                             inTimeWindow,
-			"not older than 30d before bluesky introduction": func(n newsEntry) bool { return n.Time.Unix() >= nbfBluesky },
+			"not older than 90d": inTimeWindow,
 		},
 	})
 	if err != nil {
