@@ -30,7 +30,6 @@ type blueskyClientConfig struct {
 	appkey     string
 	dryRun     bool
 	maxPosts   int
-	maxPostLen int
 	newsFilter []func(newsEntry) bool
 }
 
@@ -161,7 +160,7 @@ func (c *blueskyClient) MaxPosts() int {
 }
 
 func (c *blueskyClient) MaxPostLen() int {
-	return c.maxPostLen
+	return 300
 }
 
 type blueskyPost struct {
