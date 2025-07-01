@@ -126,9 +126,6 @@ func run(
 	news = transformNewsEntries(news, trimSpace)
 	log.Printf("Found %d news entries total", len(news))
 
-	news = filterNewsEntries(news, inTimeWindow)
-	log.Printf("Found %d news entries younger than %d days", len(news), postWindow)
-
 	for _, c := range clients {
 		log.Printf("Running %s client", c.PlatformName())
 
@@ -136,6 +133,7 @@ func run(
 		for _, filter := range c.NewsFilter() {
 			newsForClient = filterNewsEntries(newsForClient, filter)
 		}
+		log.Printf("%d news entries left after filtering", len(newsForClient))
 
 		posts, err := c.ListPosts(ctx)
 		if err != nil {
