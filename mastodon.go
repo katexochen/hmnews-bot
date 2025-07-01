@@ -16,7 +16,7 @@ type mastodonClient struct {
 type mastodonClientConfig struct {
 	dryRun     bool
 	maxPosts   int
-	newsFilter []func(newsEntry) bool
+	newsFilter map[string]func(newsEntry) bool
 }
 
 func newMastodonClient(mConfig *mastodon.Config, config mastodonClientConfig) *mastodonClient {
@@ -73,7 +73,7 @@ func (c *mastodonClient) CreatePostChain(ctx context.Context, postChain []string
 	return nil
 }
 
-func (c *mastodonClient) NewsFilter() []func(newsEntry) bool {
+func (c *mastodonClient) NewsFilter() map[string]func(newsEntry) bool {
 	return c.newsFilter
 }
 

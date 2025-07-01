@@ -30,7 +30,7 @@ type blueskyClientConfig struct {
 	appkey     string
 	dryRun     bool
 	maxPosts   int
-	newsFilter []func(newsEntry) bool
+	newsFilter map[string]func(newsEntry) bool
 }
 
 func newBlueskyClient(ctx context.Context, conf blueskyClientConfig) (*blueskyClient, error) {
@@ -147,7 +147,7 @@ func (c *blueskyClient) CreatePostChain(ctx context.Context, postChain []string)
 	return nil
 }
 
-func (c *blueskyClient) NewsFilter() []func(newsEntry) bool {
+func (c *blueskyClient) NewsFilter() map[string]func(newsEntry) bool {
 	return c.newsFilter
 }
 

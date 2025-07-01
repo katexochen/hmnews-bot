@@ -87,8 +87,8 @@ func main() {
 	}, mastodonClientConfig{
 		dryRun:   dryRun,
 		maxPosts: maxPosts,
-		newsFilter: []func(newsEntry) bool{
-			inTimeWindow,
+		newsFilter: map[string]func(newsEntry) bool{
+			"not older than 90d": inTimeWindow,
 		},
 	})
 
@@ -97,9 +97,9 @@ func main() {
 		appkey:   blueskyAppPassword,
 		dryRun:   dryRun,
 		maxPosts: maxPosts,
-		newsFilter: []func(newsEntry) bool{
-			inTimeWindow,
-			func(n newsEntry) bool { return n.Time.Unix() >= nbfBluesky },
+		newsFilter: map[string]func(newsEntry) bool{
+			"not older than 90d":                             inTimeWindow,
+			"not older than 30d before bluesky introduction": func(n newsEntry) bool { return n.Time.Unix() >= nbfBluesky },
 		},
 	})
 	if err != nil {
@@ -116,7 +116,7 @@ type post interface {
 }
 
 type postingClient interface {
-	NewsFilter() []func(newsEntry) bool
+	NewsFilter() map[string]func(newsEntry) bool
 	ListPosts(ctx context.Context) ([]post, error)
 	CreatePostChain(ctx context.Context, postChain []string) error
 	PlatformName() string
@@ -136,10 +136,10 @@ func run(
 		log.Printf("Running %s client", c.PlatformName())
 
 		newsForClient := copySlice(news)
-		for _, filter := range c.NewsFilter() {
+		for name, filter := range c.NewsFilter() {
 			newsForClient = filterNewsEntries(newsForClient, filter)
+			log.Printf("%d news entries left after filter %q", len(newsForClient), name)
 		}
-		log.Printf("%d news entries left after filtering", len(newsForClient))
 
 		posts, err := c.ListPosts(ctx)
 		if err != nil {

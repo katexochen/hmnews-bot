@@ -59,11 +59,11 @@ func (c *stubPostingClient) CreatePostChain(_ context.Context, postChain []strin
 	return nil
 }
 
-func (c *stubPostingClient) ListPosts(context.Context) ([]post, error) { return c.posts, nil }
-func (c *stubPostingClient) NewsFilter() []func(newsEntry) bool        { return nil }
-func (c *stubPostingClient) PlatformName() string                      { return "stub" }
-func (c *stubPostingClient) MaxPosts() int                             { return 2 }
-func (c *stubPostingClient) MaxPostLen() int                           { return 1000 }
+func (c *stubPostingClient) ListPosts(context.Context) ([]post, error)   { return c.posts, nil }
+func (c *stubPostingClient) NewsFilter() map[string]func(newsEntry) bool { return nil }
+func (c *stubPostingClient) PlatformName() string                        { return "stub" }
+func (c *stubPostingClient) MaxPosts() int                               { return 2 }
+func (c *stubPostingClient) MaxPostLen() int                             { return 1000 }
 
 func TestCanonicalizePost(t *testing.T) {
 	testCases := []struct {
