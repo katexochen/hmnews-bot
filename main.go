@@ -19,7 +19,6 @@ import (
 
 const (
 	postWindow = 90 // days
-	dryRun     = false
 	hashTags   = "\n#NixOS #Nix #HomeManager"
 	nbfBluesky = 1750970747 - (30 * 24 * 60 * 60) // 30 days before introduction
 )
@@ -38,6 +37,13 @@ func main() {
 	maxPosts, err := strconv.Atoi(maxPostsStr)
 	if err != nil {
 		log.Fatalf("parsing HMNB_MAX_POSTS: %v", err)
+	}
+	dryRunStr := os.Getenv("HMNB_DRY_RUN")
+	dryRun := false
+	if dryRunStr != "" {
+		if dryRun, err = strconv.ParseBool(dryRunStr); err != nil {
+			log.Fatalf("parsing HMNB_DRY_RUN: %v", err)
+		}
 	}
 	mastodonServer := os.Getenv("HMNB_MASTODON_SERVER")
 	if mastodonServer == "" {
