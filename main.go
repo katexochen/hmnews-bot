@@ -79,20 +79,18 @@ func main() {
 		ClientSecret: mastodonClientSecret,
 		AccessToken:  mastodonAccessToken,
 	}, mastodonClientConfig{
-		dryRun:     dryRun,
-		maxPosts:   maxPosts,
-		maxPostLen: 1000,
+		dryRun:   dryRun,
+		maxPosts: maxPosts,
 		newsFilter: []func(newsEntry) bool{
 			inTimeWindow,
 		},
 	})
 
 	bluesskyC, err := newBlueskyClient(ctx, blueskyClientConfig{
-		handle:     blueskyHandle,
-		appkey:     blueskyAppPassword,
-		dryRun:     dryRun,
-		maxPosts:   maxPosts,
-		maxPostLen: 300,
+		handle:   blueskyHandle,
+		appkey:   blueskyAppPassword,
+		dryRun:   dryRun,
+		maxPosts: maxPosts,
 		newsFilter: []func(newsEntry) bool{
 			inTimeWindow,
 			func(n newsEntry) bool { return n.Time.Unix() >= nbfBluesky },
