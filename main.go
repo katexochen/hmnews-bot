@@ -129,6 +129,9 @@ func run(
 ) error {
 	news = transformNewsEntries(news, trimSpace)
 	log.Printf("Found %d news entries total", len(news))
+	slices.SortFunc(news, func(a, b newsEntry) int {
+		return int(a.Time.UnixNano() - b.Time.UnixNano())
+	})
 
 	for _, c := range clients {
 		log.Printf("Running %s client", c.PlatformName())
@@ -159,14 +162,19 @@ func run(
 		}
 		log.Printf("Wrote posts file to %s.json", c.PlatformName())
 
-		newsToPost := filterNewsEntries(newsForClient, notYetPosted(posts))
-		if len(newsToPost) == 0 {
+		newsTextSplit := make([][]string, len(newsForClient))
+		for i, n := range newsForClient {
+			newsTextSplit[i] = splitIntoPosts(n.Message, c.MaxPostLen())
+		}
+
+		newsTextSplit = notYetPosted(newsTextSplit, posts)
+		if len(newsTextSplit) == 0 {
 			log.Println("No unposted news entries found")
 			continue
 		}
-		log.Printf("Found %d unposted news entries", len(newsToPost))
+		log.Printf("Found %d unposted news entries", len(newsTextSplit))
 
-		if err := postNextNewsEntries(ctx, c, newsToPost); err != nil {
+		if err := postNextNewsEntries(ctx, c, newsTextSplit); err != nil {
 			return fmt.Errorf("posting next news entries: %w", err)
 		}
 	}
@@ -181,20 +189,16 @@ func canonicalizePost(s string) string {
 	}
 	s = p.Sanitize(s)
 	s = html.UnescapeString(s)
+	s = strings.ReplaceAll(s, strings.TrimSpace(hashTags), "")
+	s = strings.TrimSpace(s)
 	return s
 }
 
-func postNextNewsEntries(ctx context.Context, client postingClient, news []newsEntry) error {
-	slices.SortFunc(news, func(a, b newsEntry) int {
-		return int(a.Time.UnixNano() - b.Time.UnixNano())
-	})
-
-	for i, newsEntry := range news {
+func postNextNewsEntries(ctx context.Context, client postingClient, newsTextSplit [][]string) error {
+	for i, posts := range newsTextSplit {
 		if i >= client.MaxPosts() {
 			break
 		}
-
-		posts := splitIntoPosts(newsEntry.Message, client.MaxPostLen())
 
 		log.Printf("Posting news entry %d with %d parts", i, len(posts))
 		for j, post := range posts {
@@ -288,15 +292,18 @@ func inTimeWindow(n newsEntry) bool {
 	return n.Time.After(time.Now().AddDate(0, 0, -postWindow))
 }
 
-func notYetPosted(posts []post) func(newsEntry) bool {
-	return func(n newsEntry) bool {
+func notYetPosted(newsEntriesSplit [][]string, posts []post) [][]string {
+	var unposted [][]string
+newsLoop:
+	for _, news := range newsEntriesSplit {
 		for _, post := range posts {
-			if strings.Contains(canonicalizePost(post.Text()), canonicalizePost(n.Message)) {
-				return false
+			if strings.Contains(canonicalizePost(post.Text()), canonicalizePost(news[0])) {
+				continue newsLoop
 			}
 		}
-		return true
+		unposted = append(unposted, news)
 	}
+	return unposted
 }
 
 func filterNewsEntries(news []newsEntry, filter func(newsEntry) bool) []newsEntry {
