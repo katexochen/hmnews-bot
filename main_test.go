@@ -9,7 +9,9 @@ import (
 	"strconv"
 	"strings"
 	"testing"
+	"time"
 
+	"github.com/bluesky-social/indigo/api/bsky"
 	"github.com/mattn/go-mastodon"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -22,9 +24,20 @@ func TestRun(t *testing.T) {
 		wantPostsContains []string
 	}{
 		{
-			testdataDir: "old", client: "mastodon", wantPostsContains: []string{
-				"programs.ssh",
-				"programs.openstackclient",
+			testdataDir: "2025-05-15T21:37:58", client: "mastodon", wantPostsContains: []string{
+				"programs.kickoff",
+				"programs.mpvpaper",
+			},
+		},
+		{
+			testdataDir: "2025-07-02T06:47:04", client: "mastodon",
+		},
+		{
+			testdataDir: "2025-07-02T06:47:04", client: "bluesky", wantPostsContains: []string{
+				"programs.rmpc",
+				"connection settings",
+				"programs.kickoff",
+				"launch options",
 			},
 		},
 	}
@@ -46,9 +59,29 @@ func TestRun(t *testing.T) {
 
 			f, err = os.ReadFile(path.Join("testdata", tc.testdataDir, fmt.Sprintf("%s.json", tc.client)))
 			require.NoError(err)
-			mastodonPosts := []*mastodon.Status{}
-			require.NoError(json.Unmarshal(f, &mastodonPosts))
-			client := stubPostingClientFromMastodonPosts(mastodonPosts)
+
+			var client *stubPostingClient
+			switch tc.client {
+			case "mastodon":
+				var mastodonPosts []*mastodon.Status
+				require.NoError(json.Unmarshal(f, &mastodonPosts))
+				client = stubPostingClientFromMastodonPosts(mastodonPosts)
+			case "bluesky":
+				var blueskyPosts []*bsky.FeedPost
+				require.NoError(json.Unmarshal(f, &blueskyPosts))
+				client = stubPostingClientFromBlueskyPosts(blueskyPosts)
+			default:
+				require.Failf("unknown client %q", tc.client)
+			}
+
+			now, err := time.Parse("2006-01-02T15:04:05", tc.testdataDir)
+			require.NoError(err)
+			filter := map[string]func(newsEntry) bool{
+				"not older than 90d": func(n newsEntry) bool {
+					return n.Time.After(now.AddDate(0, 0, -postWindow))
+				},
+			}
+			client.newsFilter = filter
 
 			assert.NoError(run(ctx, newsFile.Entries, []postingClient{client}))
 			assert.Len(client.createPostChainPosts, len(tc.wantPostsContains))
@@ -64,6 +97,7 @@ type stubPostingClient struct {
 	maxPostLen           int
 	listPostsPosts       []post
 	createPostChainPosts []post
+	newsFilter           map[string]func(newsEntry) bool
 }
 
 func stubPostingClientFromMastodonPosts(posts []*mastodon.Status) *stubPostingClient {
@@ -76,6 +110,16 @@ func stubPostingClientFromMastodonPosts(posts []*mastodon.Status) *stubPostingCl
 	return stubClient
 }
 
+func stubPostingClientFromBlueskyPosts(posts []*bsky.FeedPost) *stubPostingClient {
+	stubClient := &stubPostingClient{
+		maxPostLen: (&blueskyClient{}).MaxPostLen(),
+	}
+	for _, post := range posts {
+		stubClient.listPostsPosts = append(stubClient.listPostsPosts, &blueskyPost{post})
+	}
+	return stubClient
+}
+
 func (c *stubPostingClient) CreatePostChain(_ context.Context, postChain []string) error {
 	for _, post := range postChain {
 		c.createPostChainPosts = append(c.createPostChainPosts, &mastodonPost{&mastodon.Status{Content: post}})
@@ -84,7 +128,7 @@ func (c *stubPostingClient) CreatePostChain(_ context.Context, postChain []strin
 }
 
 func (c *stubPostingClient) ListPosts(context.Context) ([]post, error)   { return c.listPostsPosts, nil }
-func (c *stubPostingClient) NewsFilter() map[string]func(newsEntry) bool { return nil }
+func (c *stubPostingClient) NewsFilter() map[string]func(newsEntry) bool { return c.newsFilter }
 func (c *stubPostingClient) PlatformName() string                        { return "stub" }
 func (c *stubPostingClient) MaxPosts() int                               { return 2 }
 func (c *stubPostingClient) MaxPostLen() int                             { return c.maxPostLen }
@@ -197,7 +241,7 @@ func TestParseNewsFile(t *testing.T) {
 	assert := assert.New(t)
 	require := require.New(t)
 
-	f, err := os.ReadFile("testdata/news.json")
+	f, err := os.ReadFile("testdata/2025-05-15T21:37:58/news.json")
 	require.NoError(err)
 
 	news := newsFile{}
