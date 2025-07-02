@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path"
 	"strconv"
 	"strings"
 	"testing"
@@ -15,55 +16,78 @@ import (
 )
 
 func TestRun(t *testing.T) {
-	assert := assert.New(t)
-	require := require.New(t)
+	testCases := []struct {
+		testdataDir       string
+		client            string
+		wantPostsContains []string
+	}{
+		{
+			testdataDir: "old", client: "mastodon", wantPostsContains: []string{
+				"programs.ssh",
+				"programs.openstackclient",
+			},
+		},
+	}
 
-	ctx := context.Background()
+	for _, tc := range testCases {
+		t.Run(fmt.Sprintf("%s,%s", tc.testdataDir, tc.client), func(t *testing.T) {
+			assert := assert.New(t)
+			require := require.New(t)
+			ctx := context.Background()
 
-	t.Cleanup(func() {
-		assert.NoError(os.Remove("stub.json"))
-	})
+			t.Cleanup(func() {
+				assert.NoError(os.Remove("stub.json"))
+			})
 
-	f, err := os.ReadFile("testdata/news.json")
-	require.NoError(err)
-	newsFile := newsFile{}
-	require.NoError(json.Unmarshal(f, &newsFile))
+			f, err := os.ReadFile(path.Join("testdata", tc.testdataDir, "news.json"))
+			require.NoError(err)
+			newsFile := newsFile{}
+			require.NoError(json.Unmarshal(f, &newsFile))
 
-	f, err = os.ReadFile("testdata/mastodon.json")
-	require.NoError(err)
-	mastodonPosts := []*mastodon.Status{}
-	require.NoError(json.Unmarshal(f, &mastodonPosts))
+			f, err = os.ReadFile(path.Join("testdata", tc.testdataDir, fmt.Sprintf("%s.json", tc.client)))
+			require.NoError(err)
+			mastodonPosts := []*mastodon.Status{}
+			require.NoError(json.Unmarshal(f, &mastodonPosts))
+			client := stubPostingClientFromMastodonPosts(mastodonPosts)
 
-	client := stubPostingClientFromMastodonPosts(mastodonPosts)
-	assert.NoError(run(ctx, newsFile.Entries, []postingClient{client}))
-	assert.Len(client.posts, len(mastodonPosts)+2)
-	assert.FileExists("stub.json", "stub.json with posts should be created")
+			assert.NoError(run(ctx, newsFile.Entries, []postingClient{client}))
+			assert.Len(client.createPostChainPosts, len(tc.wantPostsContains))
+			for i, want := range tc.wantPostsContains {
+				assert.Contains(client.createPostChainPosts[i].Text(), want, "post %d should contain %q", i, want)
+			}
+			assert.FileExists("stub.json", "stub.json with posts should be created")
+		})
+	}
 }
 
 type stubPostingClient struct {
-	posts []post
+	maxPostLen           int
+	listPostsPosts       []post
+	createPostChainPosts []post
 }
 
 func stubPostingClientFromMastodonPosts(posts []*mastodon.Status) *stubPostingClient {
-	stubClient := &stubPostingClient{}
+	stubClient := &stubPostingClient{
+		maxPostLen: (&mastodonClient{}).MaxPostLen(),
+	}
 	for _, post := range posts {
-		stubClient.posts = append(stubClient.posts, &mastodonPost{post})
+		stubClient.listPostsPosts = append(stubClient.listPostsPosts, &mastodonPost{post})
 	}
 	return stubClient
 }
 
 func (c *stubPostingClient) CreatePostChain(_ context.Context, postChain []string) error {
 	for _, post := range postChain {
-		c.posts = append(c.posts, &mastodonPost{&mastodon.Status{Content: post}})
+		c.createPostChainPosts = append(c.createPostChainPosts, &mastodonPost{&mastodon.Status{Content: post}})
 	}
 	return nil
 }
 
-func (c *stubPostingClient) ListPosts(context.Context) ([]post, error)   { return c.posts, nil }
+func (c *stubPostingClient) ListPosts(context.Context) ([]post, error)   { return c.listPostsPosts, nil }
 func (c *stubPostingClient) NewsFilter() map[string]func(newsEntry) bool { return nil }
 func (c *stubPostingClient) PlatformName() string                        { return "stub" }
 func (c *stubPostingClient) MaxPosts() int                               { return 2 }
-func (c *stubPostingClient) MaxPostLen() int                             { return 1000 }
+func (c *stubPostingClient) MaxPostLen() int                             { return c.maxPostLen }
 
 func TestCanonicalizePost(t *testing.T) {
 	testCases := []struct {
