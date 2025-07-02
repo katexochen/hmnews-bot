@@ -70,31 +70,32 @@ func (c *blueskyClient) resolveHandle(ctx context.Context, handle string) (strin
 }
 
 func (c *blueskyClient) ListPosts(ctx context.Context) ([]post, error) {
-	feed, err := bsky.FeedGetAuthorFeed(ctx, c.xrpcClient, c.did, "", "", false, int64(20))
-	if err != nil {
-		return nil, fmt.Errorf("getting author feed: %w", err)
-	}
-	if feed == nil {
-		return nil, fmt.Errorf("feed is nil")
-	}
-	if feed.Feed == nil {
-		return nil, fmt.Errorf("feed.Feed is nil")
-	}
-	posts := make([]*bsky.FeedPost, 0, len(feed.Feed))
-	for _, entry := range feed.Feed {
-		post, ok := entry.Post.Record.Val.(*bsky.FeedPost)
-		if !ok {
-			return nil, fmt.Errorf("unexpected record type in feed post")
+	var posts []post
+	cursor := ""
+	for {
+		resp, err := bsky.FeedGetAuthorFeed(ctx, c.xrpcClient, c.did, cursor, "", false, int64(100))
+		if err != nil {
+			return nil, fmt.Errorf("getting author feed: %w", err)
 		}
-		posts = append(posts, post)
+		if resp == nil {
+			return nil, fmt.Errorf("received nil response from author feed")
+		}
+		if resp.Feed == nil {
+			return nil, fmt.Errorf("received nil feed from author feed response")
+		}
+		for _, entry := range resp.Feed {
+			rec, ok := entry.Post.Record.Val.(*bsky.FeedPost)
+			if !ok {
+				return nil, fmt.Errorf("unexpected record type in feed post")
+			}
+			posts = append(posts, &blueskyPost{rec})
+		}
+		if resp.Cursor == nil || *resp.Cursor == "" {
+			break // if no cursor returned, we're done
+		}
+		cursor = *resp.Cursor
 	}
-
-	var allPosts []post
-	for _, post := range posts {
-		allPosts = append(allPosts, &blueskyPost{post})
-	}
-
-	return allPosts, nil
+	return posts, nil
 }
 
 func (c *blueskyClient) CreatePostChain(ctx context.Context, postChain []string) error {
