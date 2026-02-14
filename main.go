@@ -189,6 +189,7 @@ func canonicalizePost(s string) string {
 	}
 	s = p.Sanitize(s)
 	s = html.UnescapeString(s)
+	s = p.Sanitize(s)
 	s = strings.ReplaceAll(s, strings.TrimSpace(hashTags), "")
 	s = strings.TrimSpace(s)
 	return s

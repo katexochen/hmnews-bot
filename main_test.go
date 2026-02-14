@@ -40,6 +40,12 @@ func TestRun(t *testing.T) {
 				"launch options",
 			},
 		},
+		{
+			testdataDir: "2026-02-14T04:51:46", client: "mastodon",
+		},
+		{
+			testdataDir: "2026-02-14T04:51:46", client: "bluesky",
+		},
 	}
 
 	for _, tc := range testCases {
@@ -134,6 +140,14 @@ func (c *stubPostingClient) MaxPosts() int                               { retur
 func (c *stubPostingClient) MaxPostLen() int                             { return c.maxPostLen }
 
 func TestCanonicalizePost(t *testing.T) {
+	/*
+		Message mismatch error?
+
+		Copy the repeatedly posted content into a test case:
+
+		post - is the 'content' from mastodon.json
+		news - is the 'message' from news.json
+	*/
 	testCases := []struct {
 		post string
 		news string
@@ -146,10 +160,19 @@ func TestCanonicalizePost(t *testing.T) {
 			post: `<p>isync/mbsync 1.5.0 has changed several things. isync gained support for using $XDG_CONFIG_HOME, and now places its config file in &#39;$XDG_CONFIG_HOME/isyncrc&#39;. isync changed the configuration options SSLType and SSLVersion to TLSType and TLSVersion respectively. All instances of &#39;accounts.email.accounts.&lt;account-name&gt;.mbsync.extraConfig.account&#39; that use &#39;SSLType&#39; or &#39;SSLVersion&#39; should be replaced with &#39;TLSType&#39; or &#39;TLSVersion&#39;, respectively. TLSType options are unchanged. TLSVersions has a new syntax, requiring a change to the Nix syntax. Old Syntax: SSLVersions = [ &quot;TLSv1.3&quot; &quot;TLSv1.2&quot; ]; New Syntax: TLSVersions = [ &quot;+1.3&quot; &quot;+1.2&quot; &quot;-1.1&quot; ]; NOTE: The minus symbol means to NOT use that particular TLS version.<br /><a href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\">#<span>NixOS</span></a> <a href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\">#<span>Nix</span></a> <a href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\">#<span>HomeManager</span></a></p>`,
 			news: `isync/mbsync 1.5.0 has changed several things. isync gained support for using $XDG_CONFIG_HOME, and now places its config file in '$XDG_CONFIG_HOME/isyncrc'. isync changed the configuration options SSLType and SSLVersion to TLSType and TLSVersion respectively. All instances of 'accounts.email.accounts.<account-name>.mbsync.extraConfig.account' that use 'SSLType' or 'SSLVersion' should be replaced with 'TLSType' or 'TLSVersion', respectively. TLSType options are unchanged. TLSVersions has a new syntax, requiring a change to the Nix syntax. Old Syntax: SSLVersions = [ \"TLSv1.3\" \"TLSv1.2\" ]; New Syntax: TLSVersions = [ \"+1.3\" \"+1.2\" \"-1.1\" ]; NOTE: The minus symbol means to NOT use that particular TLS version.`,
 		},
+		{
+			// Bug was that the <https...> was removed from the post but not from the news.
+			post: "\u003cp\u003eThe option `programs.pay-respects.rules` was added. It generates runtime rule files at {file}`$XDG_CONFIG_HOME/pay-respects/rules/\u0026lt;name\u0026gt;.toml`, where each attribute name under `rules` becomes a filename (for example, `rules.cargo` writes `cargo.toml`). For the full runtime-rules format and command matching requirements, see \u0026lt;\u003ca href=\"https://github.com/iffse/pay-respects/blob/main/rules.md\" target=\"_blank\" rel=\"nofollow noopener\" translate=\"no\"\u003e\u003cspan class=\"invisible\"\u003ehttps://\u003c/span\u003e\u003cspan class=\"ellipsis\"\u003egithub.com/iffse/pay-respects/\u003c/span\u003e\u003cspan class=\"invisible\"\u003eblob/main/rules.md\u003c/span\u003e\u003c/a\u003e\u0026gt;.\u003cbr /\u003e\u003ca href=\"https://techhub.social/tags/NixOS\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNixOS\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/Nix\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eNix\u003c/span\u003e\u003c/a\u003e \u003ca href=\"https://techhub.social/tags/HomeManager\" class=\"mention hashtag\" rel=\"tag\"\u003e#\u003cspan\u003eHomeManager\u003c/span\u003e\u003c/a\u003e\u003c/p\u003e",
+			news: "The option `programs.pay-respects.rules` was added.\n\nIt generates runtime rule files at\n{file}`$XDG_CONFIG_HOME/pay-respects/rules/<name>.toml`, where each\nattribute name under `rules` becomes a filename (for example, `rules.cargo`\nwrites `cargo.toml`).\n\nFor the full runtime-rules format and command matching requirements, see\n<https://github.com/iffse/pay-respects/blob/main/rules.md>.\n",
+		},
 	}
 	for i, tc := range testCases {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			assert.True(t, strings.Contains(canonicalizePost(tc.post), canonicalizePost(tc.news)))
+			canonicalPost := canonicalizePost(tc.post)
+			canonicalNews := canonicalizePost(spaceRegexp.ReplaceAllString(strings.TrimSpace(tc.news), " "))
+			t.Logf("canonical post: %s\n", canonicalPost)
+			t.Logf("canonical news: %s\n", canonicalNews)
+			assert.True(t, strings.Contains(canonicalPost, canonicalNews), "canonical post should contain canonical news")
 		})
 	}
 }
