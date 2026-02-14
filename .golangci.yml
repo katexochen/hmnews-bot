@@ -1,39 +1,37 @@
+version: "2"
 run:
   timeout: 10m
   modules-download-mode: readonly
 
 output:
   formats:
-    - format: tab
+    tab:
       path: stderr
-  sort-results: true
 
 linters:
   enable:
     # Default linters
     - errcheck
-    - gosimple
     - govet
     - ineffassign
     - staticcheck
-    - typecheck
     - unused
     # Additional linters
     - bodyclose
     - errname
     - godot
-    - gofmt
-    - gofumpt
     - misspell
     - noctx
     - revive
-    - tenv
     - unconvert
     - unparam
 
 issues:
   max-issues-per-linter: 0
   max-same-issues: 0
-  include:
-    - EXC0012
-    - EXC0014
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+  exclusions:
+    generated: strict

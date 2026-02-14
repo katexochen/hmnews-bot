@@ -1,3 +1,4 @@
+// Main package of hmnews-bot.
 package main
 
 import (
@@ -156,7 +157,7 @@ func run(
 		if err != nil {
 			return fmt.Errorf("opening %s.json: %w", c.PlatformName(), err)
 		}
-		defer postFile.Close()
+		defer func() { _ = postFile.Close() }()
 		if err := json.NewEncoder(postFile).Encode(posts); err != nil {
 			return fmt.Errorf("encoding posts: %w", err)
 		}
